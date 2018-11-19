@@ -6,7 +6,10 @@ script:
   - yarn run docs:build
   - cd docs/.vuepress/dist
   - echo 'developer.yggdrash.io' > CNAME
-  - git init
-  - git add -A
-  - git commit -m 'deploy'
-  - git push -f git@github.com:yggdrash/docs.git master:gh-pages
+deploy:
+  provider: pages
+  skip-cleanup: true
+  github-token: $GITHUB_TOKEN
+  keep-history: true
+  on:
+    branch: master
