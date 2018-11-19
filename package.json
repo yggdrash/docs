@@ -1,0 +1,14 @@
+{
+  "name": "docs",
+  "version": "1.0.0",
+  "description": "Official documentation for the YGGDRASH powered by VuePress.",
+  "main": "index.js",
+  "author": "YGGDRASH Dev Team",
+  "license": "MIT",
+  "scripts": {
+    "docs:build": "vuepress build docs"
+  },
+  "devDependencies": {
+    "vuepress": "^0.14.5"
+  }
+}
