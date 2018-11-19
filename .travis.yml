@@ -4,7 +4,7 @@ node_js:
 cache: yarn
 script:
   - yarn run docs:build
-  - cd /docs/.vuepress/dist
+  - cd docs/.vuepress/dist
   - echo 'developer.yggdrash.io' > CNAME
   - git init
   - git add -A
