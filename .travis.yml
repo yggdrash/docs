@@ -1,0 +1,12 @@
+language: node_js
+node_js:
+  - "10.12.0"
+cache: yarn
+script:
+  - yarn run docs:build
+  - cd /docs/.vuepress/dist
+  - echo 'developer.yggdrash.io' > CNAME
+  - git init
+  - git add -A
+  - git commit -m 'deploy'
+  - git push -f git@github.com:yggdrash/docs.git master:gh-pages
