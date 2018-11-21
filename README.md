@@ -5,6 +5,6 @@
 ```bash
 git clone https://github.com/yggdrash/docs.git
 cd docs
-yarn install
+yarn
 yarn dev
 ```
