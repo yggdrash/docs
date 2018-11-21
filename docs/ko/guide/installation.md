@@ -21,20 +21,26 @@
 - Npm ≥ v6.4.1
 - Yarn ≥ 1.12.3
 
-### Install Homebrew
+### Install Homebrew (OS X)
 ```bash
-$ /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 ```
 
 ### Install node
 ```bash
-$ brew install node
-$ node -v
+brew install node
+node -v
+```
+
+### Install nvm (recomended)
+```bash
+sudo curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.1/install.sh | bash
+nvm install 10.12.0
 ```
 
 ### Install yarn
 ```bash
-$ brew install yarn --without-node
+brew install yarn
 $ yarn -v
 ```
 
