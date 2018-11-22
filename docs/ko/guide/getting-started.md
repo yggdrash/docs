@@ -39,10 +39,10 @@ ygg branch init
     │   └── src
     │       ├── main
     │       │   └── java
-    │       │       └── MetaCoinContract.java
+    │       │       └── CoinContractTemplate.java
     │       └── test
     │           └── java
-    │               └── MetaCoinContractTest.java
+    │               └── CoinContractTemplate.java
     └── meta.seed.json
 
 seed.json:
@@ -110,9 +110,9 @@ ygg branch build
     │   │   ├── classes
     │   │   │   └── java
     │   │   │       ├── main
-    │   │   │       │   └── MetaCoinContract.class
+    │   │   │       │   └── CoinContractTemplate.class
     │   │   │       └── test
-    │   │   │           └── MetaCoinContractTest.class
+    │   │   │           └── CoinContractTemplateTest.class
     ...
     ...
     ├── meta.branch.json
@@ -200,5 +200,6 @@ curl http://localhost:8080/branches
 ## 앞으로 해야 할 일
 
 우리가 개발하고 배포한 메타코인 컨트랙트는 이그드라시에서 할 수 있는 아주 작은 부분입니다. 컨트랙트 파일을 자신에 비즈니스에 맞게 개발하고 네트워크를 형성하여, 자신만의 블록체인 거버넌스로 비즈니스를 운영할 수 있습니다.
-
+::: warning 💡
 곧 여러분이 생성한 브랜치체인을 스탬에 등록하는 프로세스를 공개할 예정입니다. 이게되면 이그드라시 참여자들은 이그드라시 브라우저를 통해 스탬에 등록된 당신의 브랜치체인을 조회하고 노드에 싱크하여 당신의 블록체인이 더 탄탄한 네트워크 위에서 동작할 수 있도록 도움을 줄 것 입니다.
+:::
