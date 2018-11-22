@@ -72,51 +72,21 @@ branch.json 이 아니라 seed.json 이라는 점에 유의하세요. branch.jso
 
 컨트랙트 자바 파일:
 ```java
+import com.google.gson.JsonArray;
 import io.yggdrash.core.contract.CoinContract;
 import io.yggdrash.core.contract.TransactionReceipt;
-import ...
 
-public class MetaCoinContract extends CoinContract {
+public class CoinContractTemplate extends CoinContract {
 
-    /**
-     * Pre-allocate yeed to addresses
-     * param frontier The Frontier is the first live release of the Yggdrash network
-     * param balance  The balance of frontier
-     *
-     * @return TransactionReceipt
-     */
-    public TransactionReceipt genesis(JsonArray params) {
-        log.info("\ngenesis :: params => " + params);
-
+    public TransactionReceipt hello(JsonArray params) {
         TransactionReceipt txReceipt = new TransactionReceipt();
-        if (state.getState().size() > 0) {
-            return txReceipt;
-        }
-
-        BigDecimal totalSupply = BigDecimal.ZERO;
-        JsonObject json = params.get(0).getAsJsonObject();
-        JsonObject alloc = json.get("alloc").getAsJsonObject();
-        for (Map.Entry<String, JsonElement> entry : alloc.entrySet()) {
-            String frontier = entry.getKey();
-            JsonObject value = entry.getValue().getAsJsonObject();
-            BigDecimal balance = value.get("balance").getAsBigDecimal();
-            totalSupply = totalSupply.add(balance);
-            CoinStateTable frontierTable = new CoinStateTable();
-            frontierTable.setMyBalance(balance);
-            state.put(frontier, frontierTable);
-
-            txReceipt.putLog(frontier, balance);
-            txReceipt.setStatus(TransactionReceipt.SUCCESS);
-            log.info("\nAddress of Frontier : " + frontier
-                    + "\nBalance of Frontier : " + state.get(frontier).getMyBalance());
-        }
-        state.setTotalSupply(totalSupply);
-        txReceipt.putLog("TotalSupply", totalSupply);
-        log.info("\n[Genesis]\nTotalSupply : " + state.getTotalSupply());
-
+        txReceipt.putLog("hello", params.toString());
+        txReceipt.setStatus(TransactionReceipt.SUCCESS);
+        log.info(txReceipt.toString());
         return txReceipt;
     }
 }
+
 ```
 
 화폐 브랜치체인이 아닌 종류에 브랜치체인을 개발하고 싶다면 `CoinContract` 가 확장하고 있는 `BaseContract<T>` 클래스를 직접 확장함으로서 가능합니다. 이에 대한 자세한 방법은 추후 컨트랙트 개발 고급 가이드를 통해 안내하겠습니다.

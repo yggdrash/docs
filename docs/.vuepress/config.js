@@ -26,7 +26,8 @@ module.exports = {
                             { text: 'Commander', link: 'https://github.com/yggdrash/yggdrash-cli' },
                             { text: 'Javascript SDK', link: 'https://github.com/yggdrash/yggjs' }
                         ]
-                    }
+                    },
+                    { text: 'Gitter', link: 'https://gitter.im/yggdrash' }
                 ],
                 sidebar: {
                     '/ko/guide/': [
@@ -48,7 +49,8 @@ module.exports = {
                             { text: 'Commander', link: 'https://github.com/yggdrash/yggdrash-cli' },
                             { text: 'Javascript SDK', link: 'https://github.com/yggdrash/yggjs' }
                         ]
-                    }
+                    },
+                    { text: 'Gitter', link: 'https://gitter.im/yggdrash' }
                 ],
                 sidebar: {
                     '/en/guide/': [
