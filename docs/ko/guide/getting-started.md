@@ -71,39 +71,53 @@ branch.json 이 아니라 seed.json 이라는 점에 유의하세요. branch.jso
 스캐폴딩에서 기본적으로 제공하는 자바파일은 `CoinContract` 클래스를 확장하도록 되어있습니다. 컨트랙트를 수정함으로서 코인에 기능을 추가하고 원하는 정책을 구현할 수 있습니다. 
 
 컨트랙트 자바 파일:
+```java
+import io.yggdrash.core.contract.CoinContract;
+import io.yggdrash.core.contract.TransactionReceipt;
+import ...
 
-    import io.yggdrash.core.contract.CoinContract;
-    import io.yggdrash.core.contract.TransactionReceipt;
-    import ...
-    
-    public class MetaCoinContract extends CoinContract {
-    
-        /**
-         * Returns TransactionReceipt (invoke)
-         */
-        @Override
-        public TransactionReceipt genesis(JsonArray params) {
-            TransactionReceipt txReceipt = new TransactionReceipt();
-            if (state.getState().size() > 0) {
-                return txReceipt;
-            }
-            log.info("\n genesis :: params => " + params);
-            JsonObject json = params.get(0).getAsJsonObject();
-            JsonObject alloc = json.get("alloc").getAsJsonObject();
-    
-            for (Map.Entry<String, JsonElement> entry : alloc.entrySet()) {
-                String frontier = entry.getKey();
-                JsonObject value = entry.getValue().getAsJsonObject();
-                BigDecimal balance = value.get("balance").getAsBigDecimal();
-                txReceipt.putLog(frontier, balance);
-                state.put(frontier, balance);
-                txReceipt.setStatus(TransactionReceipt.SUCCESS);
-                log.info("\nAddress of Frontier : " + frontier
-                        + "\nBalance of Frontier : " + balance);
-            }
+public class MetaCoinContract extends CoinContract {
+
+    /**
+     * Pre-allocate yeed to addresses
+     * param frontier The Frontier is the first live release of the Yggdrash network
+     * param balance  The balance of frontier
+     *
+     * @return TransactionReceipt
+     */
+    public TransactionReceipt genesis(JsonArray params) {
+        log.info("\ngenesis :: params => " + params);
+
+        TransactionReceipt txReceipt = new TransactionReceipt();
+        if (state.getState().size() > 0) {
             return txReceipt;
         }
+
+        BigDecimal totalSupply = BigDecimal.ZERO;
+        JsonObject json = params.get(0).getAsJsonObject();
+        JsonObject alloc = json.get("alloc").getAsJsonObject();
+        for (Map.Entry<String, JsonElement> entry : alloc.entrySet()) {
+            String frontier = entry.getKey();
+            JsonObject value = entry.getValue().getAsJsonObject();
+            BigDecimal balance = value.get("balance").getAsBigDecimal();
+            totalSupply = totalSupply.add(balance);
+            CoinStateTable frontierTable = new CoinStateTable();
+            frontierTable.setMyBalance(balance);
+            state.put(frontier, frontierTable);
+
+            txReceipt.putLog(frontier, balance);
+            txReceipt.setStatus(TransactionReceipt.SUCCESS);
+            log.info("\nAddress of Frontier : " + frontier
+                    + "\nBalance of Frontier : " + state.get(frontier).getMyBalance());
+        }
+        state.setTotalSupply(totalSupply);
+        txReceipt.putLog("TotalSupply", totalSupply);
+        log.info("\n[Genesis]\nTotalSupply : " + state.getTotalSupply());
+
+        return txReceipt;
     }
+}
+```
 
 화폐 브랜치체인이 아닌 종류에 브랜치체인을 개발하고 싶다면 `CoinContract` 가 확장하고 있는 `BaseContract<T>` 클래스를 직접 확장함으로서 가능합니다. 이에 대한 자세한 방법은 추후 컨트랙트 개발 고급 가이드를 통해 안내하겠습니다.
 
