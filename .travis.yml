@@ -4,7 +4,7 @@ node_js:
 cache: yarn
 script:
   - yarn run docs:build
-  - echo 'developer.yggdrash.io' > docs/.vuepress/dist/CNAME
+  - echo 'developers.yggdrash.io' > docs/.vuepress/dist/CNAME
 deploy:
   provider: pages
   skip-cleanup: true
