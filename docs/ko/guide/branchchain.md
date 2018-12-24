@@ -1,13 +1,28 @@
-# 시작하기
+---
+sidebarDepth: 3
+---
+# 브랜치체인
 
-이제 본격적으로 브랜치체인을 만들어봅시다. 우리가 사용할 명령어는 단 세 개 뿐입니다.
+## 브랜치체인 만들기
 
-- branch init
-- branch build
-- branch deploy
+### 프로젝트 시작 지점 설정
+브랜치체인을 만들기 전에 당신의 프로젝트 폴더를 만들어서 그 곳에 위치합니다. 앞으로 우리는 메타코인이라는 Currency 브랜치체인을 함께 만들면서 브랜치체인 개발 과정에 대해서 학습할 것입니다.
 
-## 새로운 브랜치체인 프로젝트 만들기
+**프로젝트 폴더 생성:**
+```bash
+mkdir metacoin
+cd metacoin
+```
 
+조금 더 나아가서 커맨더를 사용해서 브랜치체인의 소유자가 될 계정을 생성해봅시다. 만약 이미 이그드라시의 계정을 가지고 있다면 Import 하여 진행할 수 있습니다. 이에 대한 자세한 방법은 [커맨더 사용법](https://github.com/yggdrash/yggdrash-cli)을 참고하세요. 이 가이드에서는 새로운 계정을 생성하여 진행합니다.
+
+**이그드라시 계정 생성:**
+```bash
+ygg account new
+```
+![프로젝트 초기 설정](https://media.giphy.com/media/PMipLUnbPAGOcqyWhs/giphy.gif)
+
+### 프로젝트 스캐폴딩
 아래 명령어를 통해 바로 브랜치체인 개발을 할 수 있는 환경을 만들 수 있습니다.
 ```bash
 ygg branch init
@@ -176,26 +191,6 @@ ygg branch deploy
     │   │   ├── blocks
     │   │   │   ├── 000003.log
     ...
-
-## 노드 실행
-
-노드를 실행하여 우리가 개발한 브랜치체인이 정상적으로 동작하는지 확인합니다.
-```bash
-docker run --rm -p 8080:8080 -v $HOME/.yggdrash:/.yggdrash yggdrash/yggdrash-node
-```
-<p align="center">
-<img src="https://media.giphy.com/media/9GIF5KiW07xLgjprIY/giphy.gif" width="80%" height="400"/>
-</p>
-
-확인을 위해서 편리하게 사용할 수 있는 REST API 를 활용해봅시다.
-```bash
-curl http://localhost:8080/branches
-```
-**브랜치체인이 등록된 응답 결과**
-
-<p align="center">
-<img src="https://media.giphy.com/media/1ZmYiI8kwDtGWUs29I/giphy.gif" width="80%" height="400"/>
-</p>
 
 ## 앞으로 해야 할 일
 

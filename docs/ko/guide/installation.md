@@ -1,17 +1,19 @@
-# 시작하기 전에
+# 환경구성
 ::: warning
 이그드라시 프로젝트는 최적의 프로토콜 제공을 위해 활발히 개발중인 프로젝트로 가이드 내 진행 방법과 아웃풋이 다소 상이할 수 있습니다. 최신 업데이트는 각 프로젝트에 README 문서를 확인하세요.
 :::
 ## 자바 설치
 브랜치를 빌드하는 과정에 포함된 스마트 컨트랙트 소스빌드를 위해서는 최소 1.8 이상의 JDK 를 설치해야 합니다.
-아래 사이트에서 다운로드 받거나 Open JDK를 사용하기 위해 SDKMAN을 사용하는 것을 권장합니다.
-[https://www.oracle.com/technetwork/java/javase/overview/index.html](https://www.oracle.com/technetwork/java/javase/overview/index.html)
-### Install SDKMAN (recomended)
+오라클 공식 홈페이지에서 [다운로드](https://www.oracle.com/technetwork/java/javase/overview/index.html) 받거나 Open JDK를 사용하기 위해 SDKMAN을 사용하는 것을 권장합니다.
+
+### SDKMAN를 사용한 Java 설치 (추천)
+**SDKMAN 설치**
 ```bash
 curl -s "https://get.sdkman.io" | bash
 source "$HOME/.sdkman/bin/sdkman-init.sh"
 ```
-### Install JAVA
+
+**JAVA 설치**
 ```bash
 sdk ls java
 ================================================================================
@@ -29,6 +31,7 @@ Available Java Versions
     ...
 sdk install java 8.0.192-zulu
 ```
+**JAVA 버전 확인**
 ```bash
 javac -version
 javac 1.8.0_192
@@ -95,19 +98,3 @@ yarn global add @yggdrash/cli # or npm install -g @yggdrash/cli
 ```bash
 ygg --version
 ```
-## 시작 지점 설정
-마지막으로 브랜치체인을 만들기 전에 당신의 프로젝트 폴더를 만들어서 그 곳에 위치합니다. 앞으로 우리는 메타코인이라는 Currency 브랜치체인을 만들 것입니다. 
-프로젝트 폴더 생성:
-```bash
-mkdir metacoin
-cd metacoin
-```
-조금 더 나아가서 커맨더를 사용해서 계정을 생성해봅시다.
-이그드라시 계정 생성:
-```bash
-ygg account new
-```
-<p align="center">
-<img src="https://media.giphy.com/media/PMipLUnbPAGOcqyWhs/giphy.gif" width="80%"/>
-</p>
-

@@ -29,13 +29,25 @@ module.exports = {
                     },
                     { text: 'Gitter', link: 'https://gitter.im/yggdrash' }
                 ],
-                sidebar: {
-                    '/ko/guide/': [
-                        '/ko/guide/',
-                        '/ko/guide/installation',
-                        '/ko/guide/getting-started'
-                    ]
-                }
+                sidebar: [
+                    '/ko/guide/',
+                    '/ko/guide/installation',
+                    '/ko/guide/quick-start',
+                    {
+                        title: '가이드',
+                        collapsable: false,
+                        children: [
+                                '/ko/guide/branchchain',
+                                '/ko/guide/node',
+                                '/ko/guide/transaction-and-query',
+                        ]
+                    },
+                    {
+                        title: '고급',
+                        collapsable: false,
+                        children: []
+                    }
+                ]
             },
             '/en/': {
                 label: 'English',
