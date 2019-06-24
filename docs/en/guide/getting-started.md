@@ -1,4 +1,4 @@
-# 시작하기
+# Getting Started
 
 ### Install YGGDRASH Commander
 ```bash

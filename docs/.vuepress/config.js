@@ -1,15 +1,18 @@
 module.exports = {
+    head: [
+        ['link', { rel: 'icon', href: '/favicon.png' }],
+    ],
     locales: {
         '/': {
             lang: 'ko',
-            title: 'YGGDRASH',
+            title: 'YGGDRASH DEVELOPERS',
             description: 'TRUST-based Multi-dimensional Blockchains'
         },
-        // '/en/': {
-        //     lang: 'en-US',
-        //     title: 'YGGDRASH',
-        //     description: 'TRUST-based Multi-dimensional Blockchains'
-        // }
+        '/en/': {
+            lang: 'en-US',
+            title: 'YGGDRASH',
+            description: 'TRUST-based Multi-dimensional Blockchains'
+        }
     },
     themeConfig: {
         repo: 'yggdrash/yggdrash',
@@ -34,7 +37,8 @@ module.exports = {
                     '/ko/guide/': [
                         '/ko/guide/',
                         '/ko/guide/installation',
-                        '/ko/guide/getting-started'
+                        '/ko/guide/getting-started',
+                        '/ko/guide/test-net'
                     ]
                 }
             },
@@ -65,9 +69,12 @@ module.exports = {
         },
     },
     plugins: [
-        '@vuepress/google-analytics',
-        {
-            'ga': 'UA-112834562-6'
-        }
+        [
+            '@vuepress/google-analytics',
+            {
+                'ga': 'UA-112834562-6'
+            }
+        ],
+        ['@vuepress/back-to-top']
     ]
 }
