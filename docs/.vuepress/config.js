@@ -23,6 +23,7 @@ module.exports = {
                     { 
                         text: '제품',
                         items: [
+                            { text: 'YGGDRASH Platform', link: 'https://github.com/yggdrash/yggdrash' },
                             { text: 'Commander', link: 'https://github.com/yggdrash/yggdrash-cli' },
                             { text: 'Javascript SDK', link: 'https://github.com/yggdrash/yggjs' }
                         ]
@@ -46,6 +47,7 @@ module.exports = {
                     { 
                         text: 'Products',
                         items: [
+                            { text: 'YGGDRASH Platform', link: 'https://github.com/yggdrash/yggdrash' },
                             { text: 'Commander', link: 'https://github.com/yggdrash/yggdrash-cli' },
                             { text: 'Javascript SDK', link: 'https://github.com/yggdrash/yggjs' }
                         ]
@@ -61,5 +63,11 @@ module.exports = {
                 }
             }
         },
-    }
+    },
+    plugins: [
+        '@vuepress/google-analytics',
+        {
+            'ga': 'UA-112834562-6'
+        }
+    ]
 }

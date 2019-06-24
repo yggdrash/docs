@@ -1,10 +1,12 @@
 ## YGGDRASH TestNetwork Guide
 
 ### URL 
-- TBD
+[TEST NET Explorer](https://testnet.yggdrash.io)
 
 ### Fault
-- TBD 
+::: tip
+    ---
+:::
 
 ### Wallet Guide
 - TBD
