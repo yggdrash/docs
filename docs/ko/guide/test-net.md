@@ -31,6 +31,12 @@
 ### Yggdrash Javascript Sdk
 - [javascript sdk](https://github.com/yggdrash/yggdrash-sdk-js)
 
+
+### YGGDRASH cli
+- [cli](https://github.com/yggdrash/yggdrash-cli)
+
+
+
 ### 
     > npm install @yggdrash/sdk
 - TBD
