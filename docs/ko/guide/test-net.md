@@ -16,14 +16,6 @@
 ## URL 
 [TEST NET Explorer](https://testnet.yggdrash.io)
 
-## Faucet
-- 테스트 이드(YEED)는 Gitter 에서 요청 하시면 지갑으로 보내드립니다.
-::: tip 요청포멧
-    SEND TEST YEED FOR (ACCOUNT), PLZ
-    예> SEND TEST YEED FOR 17267414756C3f2843D1f6ef8c1a15C4D5A73F3e, PLZ
-:::
-[Gitter 가기](https://gitter.im/yggdrash/yggdrash)
-
 ## Wallet Guide
 ### YGGDRASH WEB Wallet (준비중)
 - URL
@@ -34,12 +26,21 @@
 
 ### YGGDRASH cli
 - [cli](https://github.com/yggdrash/yggdrash-cli)
+- 자세한내용은 [이그드라시 커맨더 설치](installation.md) 항목을 봐주세요.
+  
+  
+#### Faucet
+::: tip NOTE
+    YEED 컨트렉트에 faucet 트랜잭션을 발생시켜, 테스트 이드를 얻게 됩니다.
+    상단의 cli를 설치하고, 계정을 생성후 아래명령어로 테스트 이드를 얻으세요. 
+:::
 
+    ygg invoke faucet
 
+### YEED 전송
+    ygg tx transfer -t {주소} -v {수량}
+    ex ) ygg tx transfer -t 31e46b23c147f1276df3f3ed82d08a81fb679422 -v 1000
 
-### 
-    > npm install @yggdrash/sdk
-- TBD
 
 ## Node Sync Guide
 - [노드 동기화 방법](https://github.com/yggdrash/yggdrash#-yggdrash)
