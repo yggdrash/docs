@@ -1,19 +1,10 @@
 # 테스트넷 가이드
-::: warning NOTE
-    
-    테스트넷 브랜치 주소와 데이터는 변경되거나 삭제 될 수 있습니다.   
+::: warning WARNING
+**테스트넷 브랜치 주소와 데이터는 변경되거나 삭제 될 수 있습니다.**   
 :::
 
 
-## 테스트넷 정보
-- 배포일 : 2019-06-28
-- 브랜치 정보 : 3b898581ef0a6f172d31740c9de024101f1293a6
-- 컨트렉트 정보
-    - STEM 178b44b22d8c6d5bb08175fa2fcab15122ca8d1e
-    - YEED 19b9710dc8f0442d09a1b5e632f7200afe751d60
-    - DPoA 30783a1311b9c68dd3a92596d650ae6914b01658
-       
-## URL 
+## YGGDRASH TEST NET URL 
 [TEST NET Explorer](https://testnet.yggdrash.io)
 
 ## Wallet Guide
@@ -56,8 +47,16 @@ ygg invoke faucet
 
 
 ### YEED 전송
-    ygg tx transfer -t {주소} -v {수량}
-    ex) ygg tx transfer -t 31e46b23c147f1276df3f3ed82d08a81fb679422 -v 1000
+```bash
+ygg tx transfer -t {주소} -v {수량}
+
+ex) ygg tx transfer -t 31e46b23c147f1276df3f3ed82d08a81fb679422 -v 100
+
+---
+ygg ygg invoke transfer -p '{"to":"{주소}","amount":{수량}}'
+
+ex) ygg invoke transfer -p '{"to":"31e46b23c147f1276df3f3ed82d08a81fb679422","amount":100}'
+```
 
 ### YEED 조회
 ```$bash
