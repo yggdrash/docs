@@ -33,30 +33,43 @@
 ::: tip NOTE
 YEED 컨트렉트에 faucet 트랜잭션을 발생시켜, 테스트 이드를 얻게 됩니다.
 
-상단의 CLI를 설치하고, 계정을 생성후 아래명령어로 테스트 이드를 얻으세요. 
+상단의 CLI를 설치하고, 계정을 생성후 아래 명령어로 테스트 이드를 얻으세요. 
 :::
 
-    ygg invoke faucet
+```$xslt
+ygg invoke faucet
+```
+    
 
->**아래 같은 결과를 얻으세요.**
+>**아래 같이 패스워드를 입력 하면 이드요청 트랜잭션이 발송됩니다.**
+```$xslt
+? 691af5cbc92d8f4e5683246d27d199ccfa2548d6 password: [input is hidden]
+==> Transaction Hash : {트랜잭션 hash}
 
-    ? 691af5cbc92d8f4e5683246d27d199ccfa2548d6 password: [input is hidden]
-    ==> Transaction Hash : {트랜잭션 hash}
+```
+
+::: warning NOTE
+하나의 어드레스는 한번만 요청 가능 하며, 1000 씩 부여 됩니다.
+
+해당 어드레스에 이드가 있으면 요청되지 않습니다.
+:::
+
 
 ### YEED 전송
     ygg tx transfer -t {주소} -v {수량}
     ex) ygg tx transfer -t 31e46b23c147f1276df3f3ed82d08a81fb679422 -v 1000
 
 ### YEED 조회
-    ygg query balanceOf
+```$bash
+ygg query balanceOf
+  ==> Balance : 1000
+```
 
 ::: tip 트랜잭션 조회 
 트랜잭션의 정보를 Explorer 에서 조회해 보세요.
 
 [https://testnet.yggdrash.io/](https://testnet.yggdrash.io/)
 
-혹은 node 
-    
 :::
 
 ## Node Sync Guide
