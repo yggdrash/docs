@@ -1,0 +1,867 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>JSON RPC | YGGDRASH</title>
+    <meta name="description" content="TRUST-based Multi-dimensional Blockchains">
+    <link rel="icon" href="/favicon.png">
+    
+    <link rel="preload" href="/assets/css/0.styles.d5f4b078.css" as="style"><link rel="preload" href="/assets/js/app.23ef5bbf.js" as="script"><link rel="preload" href="/assets/js/2.7e4b7f88.js" as="script"><link rel="preload" href="/assets/js/11.34946d4e.js" as="script"><link rel="prefetch" href="/assets/js/10.f7e60f90.js"><link rel="prefetch" href="/assets/js/12.398a2f23.js"><link rel="prefetch" href="/assets/js/13.d7a7757f.js"><link rel="prefetch" href="/assets/js/14.7dbcb3c0.js"><link rel="prefetch" href="/assets/js/15.37376ff5.js"><link rel="prefetch" href="/assets/js/16.d1b94060.js"><link rel="prefetch" href="/assets/js/17.7e9cc317.js"><link rel="prefetch" href="/assets/js/18.4d8696e5.js"><link rel="prefetch" href="/assets/js/19.75b4f424.js"><link rel="prefetch" href="/assets/js/20.1ccfcdd6.js"><link rel="prefetch" href="/assets/js/21.323fbd37.js"><link rel="prefetch" href="/assets/js/22.a74f38fb.js"><link rel="prefetch" href="/assets/js/23.34fa8a1e.js"><link rel="prefetch" href="/assets/js/24.a1754124.js"><link rel="prefetch" href="/assets/js/25.c2c9116c.js"><link rel="prefetch" href="/assets/js/26.3be2275d.js"><link rel="prefetch" href="/assets/js/27.5d9d2a0e.js"><link rel="prefetch" href="/assets/js/28.0b381559.js"><link rel="prefetch" href="/assets/js/29.69ad1a6d.js"><link rel="prefetch" href="/assets/js/3.2bfc5241.js"><link rel="prefetch" href="/assets/js/30.b53b0bde.js"><link rel="prefetch" href="/assets/js/31.c5fbf376.js"><link rel="prefetch" href="/assets/js/32.e332767b.js"><link rel="prefetch" href="/assets/js/33.7580850a.js"><link rel="prefetch" href="/assets/js/34.8ce3d9e4.js"><link rel="prefetch" href="/assets/js/35.e1351ef8.js"><link rel="prefetch" href="/assets/js/36.ff3af8d5.js"><link rel="prefetch" href="/assets/js/37.54e1023b.js"><link rel="prefetch" href="/assets/js/4.60f96b24.js"><link rel="prefetch" href="/assets/js/5.87d588e6.js"><link rel="prefetch" href="/assets/js/6.690ffbf8.js"><link rel="prefetch" href="/assets/js/7.3d35d827.js"><link rel="prefetch" href="/assets/js/8.7804154e.js"><link rel="prefetch" href="/assets/js/9.089e8dcf.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.d5f4b078.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/en/" class="home-link router-link-active"><!----> <span class="site-name">YGGDRASH</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/en/" class="nav-link">Home</a></div><div class="nav-item"><a href="/en/guide/" class="nav-link">Guide</a></div><div class="nav-item"><a href="/en/yggdrash-doc/" class="nav-link router-link-active">Document</a></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title">Products</span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="https://github.com/yggdrash/yggdrash" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  YGGDRASH Platform
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li><li class="dropdown-item"><!----> <a href="https://github.com/yggdrash/yggdrash-cli" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Commander
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li><li class="dropdown-item"><!----> <a href="https://github.com/yggdrash/yggjs" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Javascript SDK
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li></ul></div></div><div class="nav-item"><a href="https://gitter.im/yggdrash" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Gitter
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title">Languages</span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/" class="nav-link">한국어</a></li><li class="dropdown-item"><!----> <a href="/en/yggdrash-doc/api/jsonrpc-api.html" class="nav-link router-link-exact-active router-link-active">English</a></li></ul></div></div> <a href="https://github.com/yggdrash/yggdrash" target="_blank" rel="noopener noreferrer" class="repo-link">
+    GitHub
+    <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/en/" class="nav-link">Home</a></div><div class="nav-item"><a href="/en/guide/" class="nav-link">Guide</a></div><div class="nav-item"><a href="/en/yggdrash-doc/" class="nav-link router-link-active">Document</a></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title">Products</span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="https://github.com/yggdrash/yggdrash" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  YGGDRASH Platform
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li><li class="dropdown-item"><!----> <a href="https://github.com/yggdrash/yggdrash-cli" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Commander
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li><li class="dropdown-item"><!----> <a href="https://github.com/yggdrash/yggjs" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Javascript SDK
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li></ul></div></div><div class="nav-item"><a href="https://gitter.im/yggdrash" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Gitter
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title">Languages</span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/" class="nav-link">한국어</a></li><li class="dropdown-item"><!----> <a href="/en/yggdrash-doc/api/jsonrpc-api.html" class="nav-link router-link-exact-active router-link-active">English</a></li></ul></div></div> <a href="https://github.com/yggdrash/yggdrash" target="_blank" rel="noopener noreferrer" class="repo-link">
+    GitHub
+    <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></nav>  <ul class="sidebar-links"><li><a href="/en/yggdrash-doc/" class="sidebar-link">Yggdrash Development Document</a></li><li><a href="/en/yggdrash-doc/architecture.html" class="sidebar-link">Architecture</a></li><li><a href="/en/yggdrash-doc/block.html" class="sidebar-link">Block</a></li><li><a href="/en/yggdrash-doc/node.html" class="sidebar-link">Node</a></li><li><a href="/en/yggdrash-doc/api/jsonrpc-api.html" class="active sidebar-link">JSON RPC</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/en/yggdrash-doc/api/jsonrpc-api.html#javascript-api" class="sidebar-link">JavaScript API</a></li><li class="sidebar-sub-header"><a href="/en/yggdrash-doc/api/jsonrpc-api.html#json-rpc-endpoint" class="sidebar-link">JSON-RPC Endpoint</a></li><li class="sidebar-sub-header"><a href="/en/yggdrash-doc/api/jsonrpc-api.html#curl-examples-explained" class="sidebar-link">Curl Examples Explained</a></li><li class="sidebar-sub-header"><a href="/en/yggdrash-doc/api/jsonrpc-api.html#json-rpc-api-reference" class="sidebar-link">JSON RPC API Reference</a></li></ul></li><li><a href="/en/yggdrash-doc/api/api-interface.html" class="sidebar-link">Yggdrash API Interface</a></li><li><a href="/en/yggdrash-doc/api/jsonrpc-error-codes.html" class="sidebar-link">JSON RPC Error Codes Improvement Proposal</a></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="json-rpc"><a href="#json-rpc" aria-hidden="true" class="header-anchor">#</a> JSON RPC</h1> <p><strong>Contents</strong></p> <ul><li><a href="#json-rpc-api">JSON RPC API</a> <ul><li><a href="#javascript-api">JavaScript API</a></li> <li><a href="#json-rpc-endpoint">JSON-RPC Endpoint</a></li> <li><a href="#curl-examples-explained">Curl Examples Explained</a></li> <li><a href="#json-rpc-api-reference">JSON RPC API Reference</a> <ul><li><a href="#createAccount">createAccount</a></li> <li><a href="#accounts">accounts</a></li> <li><a href="#balanceOf">balanceOf</a></li> <li><a href="#getBalance">getBalance</a></li> <li><a href="#blockNumber">blockNumber</a></li> <li><a href="#getBlockByHash">getBlockByHash</a></li> <li><a href="#getBlockByNumber">getBlockByNumber</a></li> <li><a href="#newBlockFilter">newBlockFilter</a></li> <li><a href="#getTransactionCountByBlockHash">getTransactionCountByBlockHash</a></li> <li><a href="#getTransactionCountByBlockNumber">getTransactionCountByBlockNumber</a></li> <li><a href="#getTransactionByHash">getTransactionByHash</a></li> <li><a href="#getTransactionByBlockHash">getTransactionByBlockHash</a></li> <li><a href="#getTransactionByBlockNumber">getTransactionByBlockNumber</a></li> <li><a href="#getTransactionReceipt">getTransactionReceipt</a></li> <li><a href="#sendTransaction">sendTransaction</a></li> <li><a href="#sendRawTransaction">sendRawTransaction</a></li> <li><a href="#newPendingTransactionFilter">newPendingTransactionFilter</a></li> <li><a href="#getTransactionReceipt">getTransactionReceipt</a></li> <li><a href="#getAllTransactionReceipt">getAllTransactionReceipt</a></li> <li><a href="#contract-query">[contract] query</a></li> <li><a href="#peer-add">[peer] add</a></li> <li><a href="#peer-getall">[peer] getAll</a></li> <li><a href="#peer-getAllActivePeer">[peer] getAllActivePeer</a></li> <li><a href="#admin-nodeHello">[admin] nodeHello</a></li> <li><a href="#admin-requestcommand">[admin] requestCommand</a></li></ul></li></ul></li></ul> <h1 id="json-rpc-api"><a href="#json-rpc-api" aria-hidden="true" class="header-anchor">#</a> JSON RPC API</h1> <p><a href="http://json.org/" target="_blank" rel="noopener noreferrer">JSON<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a> is a lightweight data-interchange format.
+It can represent numbers, strings, ordered sequences of values, and collections of name/value pairs.</p> <p><a href="https://www.jsonrpc.org/specification" target="_blank" rel="noopener noreferrer">JSON-RPC<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a> is a stateless, light-weight remote procedure call (RPC) protocol.
+Primarily this specification defines several data structures and the rules around their processing.
+It is transport agnostic in that the concepts can be used within the same process, over sockets, over HTTP, or in many various message passing environments.
+It uses JSON (<a href="http://www.ietf.org/rfc/rfc4627.txt" target="_blank" rel="noopener noreferrer">RFC 4627<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a>) as data format.</p> <h2 id="javascript-api"><a href="#javascript-api" aria-hidden="true" class="header-anchor">#</a> JavaScript API</h2> <h2 id="json-rpc-endpoint"><a href="#json-rpc-endpoint" aria-hidden="true" class="header-anchor">#</a> JSON-RPC Endpoint</h2> <p>Default JSON-RPC endpoints :</p> <table><thead><tr><th style="text-align:center;">Client</th> <th style="text-align:center;">URL</th></tr></thead> <tbody><tr><td style="text-align:center;">Java</td> <td style="text-align:center;"><a href="http://localhost:8080" target="_blank" rel="noopener noreferrer">http://localhost:8080<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></td></tr></tbody></table> <h2 id="curl-examples-explained"><a href="#curl-examples-explained" aria-hidden="true" class="header-anchor">#</a> Curl Examples Explained</h2> <p>The curl options below might return a response where the node complains about the content type,
+this is because the --data option sets the content type to application/x-www-form-urlencoded .
+If your node does complain, manually set the header by placing -H &quot;Content-Type: application/json&quot; at the start of the call.</p> <p>The examples also do not include the URL/IP &amp; port combination which must be the last argument given to curl e.x. 127.0.0.1:8080</p> <h2 id="json-rpc-api-reference"><a href="#json-rpc-api-reference" aria-hidden="true" class="header-anchor">#</a> JSON RPC API Reference</h2> <h3 id="createaccount"><a href="#createaccount" aria-hidden="true" class="header-anchor">#</a> createAccount</h3> <p>Create a new account.</p> <p><strong>Parameter</strong></p> <p>none</p> <p><strong>Returns</strong></p> <p><code>String</code>, 20 bytes - an address</p> <p><strong>Example</strong></p> <div class="language- extra-class"><pre class="language-text"><code>// Request
+{
+    &quot;id&quot;:&quot;1&quot;,
+    &quot;jsonrpc&quot;:&quot;2.0&quot;,
+    &quot;method&quot;:&quot;createAccount&quot;
+}
+
+// Result
+{
+    &quot;jsonrpc&quot;:&quot;2.0&quot;,
+    &quot;id&quot;:&quot;1973130775&quot;,
+    &quot;result&quot;:&quot;eddc6ac0d1c6b4b84842f1b8f154aee07ead74b9&quot;
+}
+</code></pre></div><hr> <h4 id="accounts"><a href="#accounts" aria-hidden="true" class="header-anchor">#</a> accounts</h4> <p>Returns a list of addresses owned by client.</p> <p><strong>Parameter</strong></p> <p>none</p> <p><strong>Returns</strong></p> <p><code>Array of DATA</code>, 20 bytes - addresses owned by the client</p> <p><strong>Example</strong></p> <div class="language- extra-class"><pre class="language-text"><code>// Request
+{
+    &quot;id&quot;:&quot;2051005236&quot;,
+    &quot;jsonrpc&quot;:&quot;2.0&quot;,
+    &quot;method&quot;:&quot;accounts&quot;
+}
+
+// Result
+{
+    &quot;jsonrpc&quot;:&quot;2.0&quot;,
+    &quot;id&quot;:&quot;2051005236&quot;,
+    &quot;result&quot;:[&quot;0xA6cf59D72cB6c253b3CFe10d498aC8615453689B&quot;,&quot;0x2Aa4BCaC31F7F67B9a15681D5e4De2FBc778066A&quot;,&quot;0x1662E2457A0e079B03214dc3D5009bA2137006C7&quot;]
+}
+</code></pre></div><hr> <h4 id="balanceof"><a href="#balanceof" aria-hidden="true" class="header-anchor">#</a> balanceOf</h4> <p>Returns a balance of address</p> <p><strong>Parameter</strong></p> <p><code>String of DATA</code> - query</p> <div class="language- extra-class"><pre class="language-text"><code>params: {
+		&quot;data&quot;: &quot;{\&quot;address\&quot;:\&quot;a08ee962cd8b2bd0edbfee989c1a9f7884d26532\&quot;,\&quot;method\&quot;:\&quot;balanceOf\&quot;,\&quot;params\&quot;:[{\&quot;address\&quot;:\&quot;c91e9d46dd4b7584f0b6348ee18277c10fd7cb94\&quot;}]}&quot;
+}
+</code></pre></div><p><strong>Returns</strong></p> <p><code>String of DATA</code> - balance of address</p> <p><strong>Example</strong></p> <div class="language- extra-class"><pre class="language-text"><code>// Request
+{
+	&quot;id&quot;: &quot;1241106686&quot;,
+	&quot;jsonrpc&quot;: &quot;2.0&quot;,
+	&quot;method&quot;: &quot;balanceOf&quot;,
+	&quot;params&quot;: {
+		&quot;data&quot;: &quot;{\&quot;address\&quot;:\&quot;a08ee962cd8b2bd0edbfee989c1a9f7884d26532\&quot;,\&quot;method\&quot;:\&quot;balanceOf\&quot;,\&quot;params\&quot;:[{\&quot;address\&quot;:\&quot;c91e9d46dd4b7584f0b6348ee18277c10fd7cb94\&quot;}]}&quot;
+	}
+}
+
+// Response
+{
+	&quot;jsonrpc&quot;: &quot;2.0&quot;,
+	&quot;id&quot;: &quot;1241106686&quot;,
+	&quot;result&quot;: &quot;{\&quot;result\&quot;:\&quot;1000000000\&quot;}&quot;
+}
+</code></pre></div><hr> <h4 id="getbalance"><a href="#getbalance" aria-hidden="true" class="header-anchor">#</a> getBalance</h4> <p>Returns the balance of the account of given address.</p> <p><strong>Parameter</strong></p> <ol><li><code>DATA</code>, 20 bytes - address to check for balance.</li> <li><code>QUANTITY | TAG</code> - integer block number, or the string <code>&quot;latest&quot;</code>, <code>&quot;earliest&quot;</code> or <code>&quot;pending&quot;</code></li></ol> <p><strong>Returns</strong></p> <p><code>QUANTITY</code> - integer of the current balance (i.e. Yeed)</p> <p><strong>Example</strong></p> <div class="language- extra-class"><pre class="language-text"><code>// Request
+{
+    &quot;id&quot;:&quot;623943523&quot;,
+    &quot;jsonrpc&quot;:&quot;2.0&quot;,
+    &quot;method&quot;:&quot;getBalance&quot;,
+    &quot;params&quot;:{
+                &quot;address&quot;:&quot;0x2Aa4BCaC31F7F67B9a15681D5e4De2FBc778066A&quot;,
+                &quot;tag&quot;:&quot;latest&quot;
+              }
+}
+
+// Result
+{
+    &quot;jsonrpc&quot;:&quot;2.0&quot;,
+    &quot;id&quot;:&quot;623943523&quot;,
+    &quot;result&quot;:100000
+}
+</code></pre></div><hr> <h4 id="blocknumber"><a href="#blocknumber" aria-hidden="true" class="header-anchor">#</a> blockNumber</h4> <p>Returns the number of most recent block.</p> <p><strong>Parameter</strong></p> <p>none</p> <p><strong>Returns</strong></p> <p><code>QUANTITY</code> - integer of the current block number the client is on.</p> <p><strong>Example</strong></p> <div class="language- extra-class"><pre class="language-text"><code>// Request
+{
+	&quot;id&quot;: &quot;1606256378&quot;,
+	&quot;jsonrpc&quot;: &quot;2.0&quot;,
+	&quot;method&quot;: &quot;blockNumber&quot;,
+	&quot;params&quot;: {
+		&quot;branchId&quot;: &quot;fe7b7c93dd23f78e12ad42650595bc0f874c88f7&quot;
+	}
+}
+
+// Result
+{
+	&quot;jsonrpc&quot;: &quot;2.0&quot;,
+	&quot;id&quot;: &quot;1606256378&quot;,
+	&quot;result&quot;: 28
+}
+</code></pre></div><hr> <h4 id="getblockbyhash"><a href="#getblockbyhash" aria-hidden="true" class="header-anchor">#</a> getBlockByHash</h4> <p>Returns information about a block by hash.</p> <p><strong>Parameter</strong></p> <ol><li><code>DATA</code>, 32 Bytes - Hash of a block.</li> <li><code>Boolean</code> - If <code>true</code> it returns the full transaction objects, if <code>false</code> only the hashes of the transactions.</li></ol> <div class="language- extra-class"><pre class="language-text"><code>params: {
+ 		&quot;branchId&quot;: &quot;fe7b7c93dd23f78e12ad42650595bc0f874c88f7&quot;,
+ 		&quot;blockId&quot;: &quot;ad7dd0552336ebf3b2f4f648c4a87d7c35ed74382219e2954047ad9138a247c5&quot;,
+ 		&quot;bool&quot;: true
+}
+</code></pre></div><p><strong>Returns</strong></p> <p><code>Object</code> - A block object, or <code>null</code> when no block was found:</p> <p><strong>Example</strong></p> <div class="language- extra-class"><pre class="language-text"><code>/// Request (to Stem chain)
+ {
+ 	&quot;id&quot;: &quot;888983999&quot;,
+ 	&quot;jsonrpc&quot;: &quot;2.0&quot;,
+ 	&quot;method&quot;: &quot;getBlockByHash&quot;,
+ 	&quot;params&quot;: {
+ 		&quot;branchId&quot;: &quot;fe7b7c93dd23f78e12ad42650595bc0f874c88f7&quot;,
+ 		&quot;blockId&quot;: &quot;ad7dd0552336ebf3b2f4f648c4a87d7c35ed74382219e2954047ad9138a247c5&quot;,
+ 		&quot;bool&quot;: true
+ 	}
+ }
+ 
+ // Result (from Stem chain)
+ {
+ 	&quot;jsonrpc&quot;: &quot;2.0&quot;,
+ 	&quot;id&quot;: &quot;888983999&quot;,
+ 	&quot;result&quot;: {
+ 		&quot;chain&quot;: &quot;fe7b7c93dd23f78e12ad42650595bc0f874c88f7&quot;,
+ 		&quot;version&quot;: &quot;0000000000000000&quot;,
+ 		&quot;type&quot;: &quot;0000000000000000&quot;,
+ 		&quot;prevBlockHash&quot;: &quot;7525186314769ae0cabfe8addafe5e40e1b4d92478d9afd13943a8d1112b201f&quot;,
+ 		&quot;index&quot;: 1,
+ 		&quot;timestamp&quot;: 1537435370004,
+ 		&quot;merkleRoot&quot;: &quot;0000000000000000000000000000000000000000000000000000000000000000&quot;,
+ 		&quot;bodyLength&quot;: 0,
+ 		&quot;signature&quot;: &quot;1c4fb772df3f7409c10b82af425b30a005cd38babd93cacd07726e09733abdd19d6e64c8ae03688a9e70ea3d751cd7e7dba3a182f6f567e2c7f1c542c1e95c8159&quot;,
+ 		&quot;body&quot;: [],
+ 		&quot;author&quot;: &quot;aaa2aaab0fb041c5cb2a60a12291cbc3097352bb&quot;,
+ 		&quot;hash&quot;: &quot;ad7dd0552336ebf3b2f4f648c4a87d7c35ed74382219e2954047ad9138a247c5&quot;
+ 	}
+ }
+</code></pre></div><hr> <h4 id="getblockbynumber"><a href="#getblockbynumber" aria-hidden="true" class="header-anchor">#</a> getBlockByNumber</h4> <p>Returns information about a block by block number.</p> <p><strong>Parameter</strong></p> <ol><li><code>QUANTITY|TAG</code> - integer of a block number, or the string <code>&quot;earliest&quot;</code>, <code>&quot;latest&quot;</code> or <code>&quot;pending&quot;</code>, as in the default block parameter.</li> <li><code>Boolean</code> - If <code>true</code> it returns the full transaction objects, if <code>false</code> only the hashes of the transactions.</li></ol> <div class="language- extra-class"><pre class="language-text"><code>params: [
+   true
+   '0xbbF5029Fd710d227630c8b7d338051B8E76d50B3'
+]
+</code></pre></div><p><strong>Returns</strong></p> <p>See <a href="">getBlockByHash</a></p> <p><strong>Example</strong></p> <div class="language- extra-class"><pre class="language-text"><code>// Request (to Stem chain)
+{
+	&quot;id&quot;: &quot;988795691&quot;,
+	&quot;jsonrpc&quot;: &quot;2.0&quot;,
+	&quot;method&quot;: &quot;getBlockByNumber&quot;,
+	&quot;params&quot;: {
+		&quot;branchId&quot;: &quot;fe7b7c93dd23f78e12ad42650595bc0f874c88f7&quot;,
+		&quot;numOfBlock&quot;: 0,
+		&quot;bool&quot;: true
+	}
+}
+
+// Result (from Stem chain)
+{
+	&quot;jsonrpc&quot;: &quot;2.0&quot;,
+	&quot;id&quot;: &quot;988795691&quot;,
+	&quot;result&quot;: {
+		&quot;chain&quot;: &quot;fe7b7c93dd23f78e12ad42650595bc0f874c88f7&quot;,
+		&quot;version&quot;: &quot;0000000000000000&quot;,
+		&quot;type&quot;: &quot;0000000000000000&quot;,
+		&quot;prevBlockHash&quot;: &quot;0000000000000000000000000000000000000000000000000000000000000000&quot;,
+		&quot;index&quot;: 0,
+		&quot;timestamp&quot;: 1537246807962,
+		&quot;merkleRoot&quot;: &quot;1cf4b39c9530026fb5294c8e53041304252749e9bdccc7014a6bc78985699d60&quot;,
+		&quot;bodyLength&quot;: 1734,
+		&quot;signature&quot;: &quot;1c8d4fdb448e55ada01ec98add95a360d18e750cc3a5230a142b0027684e1b7642207ffc435a93a9408040b0466c7d6bc1045b9ec0d6bf31c0783a4fc2859fc3f0&quot;,
+		&quot;body&quot;: [{
+			&quot;chain&quot;: &quot;fe7b7c93dd23f78e12ad42650595bc0f874c88f7&quot;,
+			&quot;version&quot;: &quot;0000000000000000&quot;,
+			&quot;type&quot;: &quot;0000000000000000&quot;,
+			&quot;timestamp&quot;: 1537246807962,
+			&quot;bodyHash&quot;: &quot;09ecdfc92e99c14e67ad93dd0d7b13c69042ff652206b2aea89878f045dd598c&quot;,
+			&quot;bodyLength&quot;: 1585,
+			&quot;signature&quot;: &quot;1cf604a2e271344dacdfa3119e066a87966514b018d24980ca89b11b58e672b16949fd05f63f9178916489c39594819b0efd26801b8572b3c962ac9fc0f38d52f5&quot;,
+			&quot;body&quot;: &quot;[{\&quot;method\&quot;:\&quot;genesis\&quot;,\&quot;branchId\&quot;:\&quot;fe7b7c93dd23f78e12ad42650595bc0f874c88f7\&quot;,\&quot;params\&quot;:[{\&quot;branchId\&quot;:\&quot;fe7b7c93dd23f78e12ad42650595bc0f874c88f7\&quot;,\&quot;branch\&quot;:\&quot;{\\\&quot;name\\\&quot;:\\\&quot;STEM\\\&quot;,\\\&quot;symbol\\\&quot;:\\\&quot;STEM\\\&quot;,\\\&quot;property\\\&quot;:\\\&quot;ecosystem\\\&quot;,\\\&quot;type\\\&quot;:\\\&quot;immunity\\\&quot;,\\\&quot;description\\\&quot;:\\\&quot;The Basis of the YGGDRASH Ecosystem. It is also an aggregate and a blockchain containing information of all Branch Chains.\\\&quot;,\\\&quot;tag\\\&quot;:0.1,\\\&quot;version\\\&quot;:\\\&quot;0xcc9612ff91ff844938acdb6608e58506a2f21b8a5d77e88726c0897e8d1d02c0\\\&quot;,\\\&quot;reference_address\\\&quot;:\\\&quot;\\\&quot;,\\\&quot;reserve_address\\\&quot;:\\\&quot;0xcee3d4755e47055b530deeba062c5bd0c17eb00f\\\&quot;,\\\&quot;owner\\\&quot;:\\\&quot;c91e9d46dd4b7584f0b6348ee18277c10fd7cb94\\\&quot;,\\\&quot;timestamp\\\&quot;:1536755670444,\\\&quot;version_history\\\&quot;:[\\\&quot;0xcc9612ff91ff844938acdb6608e58506a2f21b8a5d77e88726c0897e8d1d02c0\\\&quot;]}\&quot;}],\&quot;delegator\&quot;:{\&quot;a7a9ad6f834bcc080586c55e9b1981b7ec39f31d\&quot;:{\&quot;ip\&quot;:\&quot;172.16.10.150\&quot;,\&quot;port\&quot;:\&quot;32918\&quot;},\&quot;50c7b8af63f57ddef4b954e38e7a1253c896b742\&quot;:{\&quot;ip\&quot;:\&quot;172.16.10.150\&quot;,\&quot;port\&quot;:\&quot;32919\&quot;},\&quot;5db10750e8caff27f906b41c71b3471057dd2002\&quot;:{\&quot;ip\&quot;:\&quot;100.100.100.3\&quot;,\&quot;port\&quot;:\&quot;32918\&quot;},\&quot;5db10750e8caff27f906b41c71b3471057dd2003\&quot;:{\&quot;ip\&quot;:\&quot;100.100.100.4\&quot;,\&quot;port\&quot;:\&quot;32918\&quot;},\&quot;5db10750e8caff27f906b41c71b3471057dd2004\&quot;:{\&quot;ip\&quot;:\&quot;100.100.100.5\&quot;,\&quot;port\&quot;:\&quot;32918\&quot;}},\&quot;node\&quot;:{\&quot;5db10750e8caff27f906b41c71b3471057dd2006\&quot;:{\&quot;ip\&quot;:\&quot;100.100.100.6\&quot;,\&quot;port\&quot;:\&quot;32918\&quot;},\&quot;5db10750e8caff27f906b41c71b3471057dd2007\&quot;:{\&quot;ip\&quot;:\&quot;100.100.100.7\&quot;,\&quot;port\&quot;:\&quot;32918\&quot;},\&quot;5db10750e8caff27f906b41c71b3471057dd2008\&quot;:{\&quot;ip\&quot;:\&quot;100.100.100.8\&quot;,\&quot;port\&quot;:\&quot;32918\&quot;},\&quot;5db10750e8caff27f906b41c71b3471057dd2009\&quot;:{\&quot;ip\&quot;:\&quot;100.100.100.9\&quot;,\&quot;port\&quot;:\&quot;32918\&quot;},\&quot;5db10750e8caff27f906b41c71b3471057dd2010\&quot;:{\&quot;ip\&quot;:\&quot;100.100.100.10\&quot;,\&quot;port\&quot;:\&quot;32918\&quot;}}}]&quot;,
+			&quot;author&quot;: &quot;e68dc7c57c52221b291cc7440becc025554082d9&quot;,
+			&quot;hash&quot;: &quot;76f2292411ea0c8233cc5302ccb7035d16e13d9b6f6c53cb26a8afd126cc9864&quot;
+		}],
+		&quot;author&quot;: &quot;e68dc7c57c52221b291cc7440becc025554082d9&quot;,
+		&quot;hash&quot;: &quot;7525186314769ae0cabfe8addafe5e40e1b4d92478d9afd13943a8d1112b201f&quot;
+	}
+}
+</code></pre></div><hr> <h4 id="newblockfilter"><a href="#newblockfilter" aria-hidden="true" class="header-anchor">#</a> newBlockFilter</h4> <p>Creates a filter in the node, to notify when a new block arrives.<br>
+(To check if the state has changed, call eth_getFilterChanges.)</p> <p><strong>Parameter</strong></p> <p>none</p> <p><strong>Returns</strong></p> <p><code>QUANTITY</code> - A filter id.</p> <p><strong>Example</strong></p> <div class="language- extra-class"><pre class="language-text"><code>// Request
+{
+    &quot;id&quot;:&quot;2075477934&quot;,
+    &quot;jsonrpc&quot;:&quot;2.0&quot;,
+    &quot;method&quot;:&quot;newBlockFilter&quot;
+}
+
+// Result
+{
+    &quot;jsonrpc&quot;:&quot;2.0&quot;,
+    &quot;id&quot;:&quot;2075477934&quot;,
+    &quot;result&quot;:0
+}
+</code></pre></div><hr> <h4 id="gettransactioncountbyblockhash"><a href="#gettransactioncountbyblockhash" aria-hidden="true" class="header-anchor">#</a> getTransactionCountByBlockHash</h4> <p>Returns the number of transactions in a block from a block matching the given block hash.</p> <p><strong>Parameter</strong></p> <p><code>DATA</code>, 32 Bytes - hash of a block</p> <p><strong>Returns</strong></p> <p><code>QUANTITY</code> - integer of the number of transactions in this block.</p> <p><strong>Example</strong></p> <div class="language- extra-class"><pre class="language-text"><code>// Request (to Stem chain)
+{
+	&quot;id&quot;: &quot;1327275333&quot;,
+	&quot;jsonrpc&quot;: &quot;2.0&quot;,
+	&quot;method&quot;: &quot;getTransactionCountByBlockHash&quot;,
+	&quot;params&quot;: {
+		&quot;branchId&quot;: &quot;fe7b7c93dd23f78e12ad42650595bc0f874c88f7&quot;,
+		&quot;blockId&quot;: &quot;d52fffa14f5b88b141d05d8e28c90d8131db1aa63e076bfea9c28c3060049e12&quot;
+	}
+}
+
+// Result (from Stem chain)
+{
+	&quot;jsonrpc&quot;: &quot;2.0&quot;,
+	&quot;id&quot;: &quot;1327275333&quot;,
+	&quot;result&quot;: 50
+}
+</code></pre></div><hr> <h4 id="gettransactioncountbyblocknumber"><a href="#gettransactioncountbyblocknumber" aria-hidden="true" class="header-anchor">#</a> getTransactionCountByBlockNumber</h4> <p>Returns the number of transactions in a block matching the given block number.</p> <p><strong>Parameter</strong></p> <p><code>QUANTITY|TAG</code> - integer of a block number, or the string <code>&quot;earliest&quot;</code>, <code>&quot;latest&quot;</code> or <code>&quot;pending&quot;</code>, as in the default block parameter.
+<code>QUANTITY</code> - the transaction index position.</p> <div class="language- extra-class"><pre class="language-text"><code>params: {
+		&quot;branchId&quot;: &quot;fe7b7c93dd23f78e12ad42650595bc0f874c88f7&quot;,
+		&quot;blockNumber&quot;: 3
+}
+
+params: {
+		&quot;branchId&quot;: &quot;fe7b7c93dd23f78e12ad42650595bc0f874c88f7&quot;,
+		&quot;txIndexPosition&quot;: 2,
+		&quot;blockNumber&quot;: 31
+}
+</code></pre></div><p><strong>Returns</strong></p> <p><code>QUANTITY</code> - integer of the number of transactions in this block.</p> <p><strong>Example</strong></p> <div class="language- extra-class"><pre class="language-text"><code>// Request (to Stem chain)
+{
+	&quot;id&quot;: &quot;1322610796&quot;,
+	&quot;jsonrpc&quot;: &quot;2.0&quot;,
+	&quot;method&quot;: &quot;getTransactionCountByBlockNumber&quot;,
+	&quot;params&quot;: {
+		&quot;branchId&quot;: &quot;fe7b7c93dd23f78e12ad42650595bc0f874c88f7&quot;,
+		&quot;blockNumber&quot;: 3
+	}
+}
+
+// Result (from Stem chain)
+{
+	&quot;jsonrpc&quot;: &quot;2.0&quot;,
+	&quot;id&quot;: &quot;1322610796&quot;,
+	&quot;result&quot;: 50
+}
+
+// Request (to Stem chain)
+{
+	&quot;id&quot;: &quot;729387017&quot;,
+	&quot;jsonrpc&quot;: &quot;2.0&quot;,
+	&quot;method&quot;: &quot;getTransactionCountByBlockNumber&quot;,
+	&quot;params&quot;: {
+		&quot;branchId&quot;: &quot;fe7b7c93dd23f78e12ad42650595bc0f874c88f7&quot;,
+		&quot;txIndexPosition&quot;: 2,
+		&quot;blockNumber&quot;: 31
+	}
+}
+
+// Result (from Stem chain)
+{
+	&quot;jsonrpc&quot;: &quot;2.0&quot;,
+	&quot;id&quot;: &quot;729387017&quot;,
+	&quot;result&quot;: {
+		&quot;chain&quot;: &quot;fe7b7c93dd23f78e12ad42650595bc0f874c88f7&quot;,
+		&quot;version&quot;: &quot;0000000000000000&quot;,
+		&quot;type&quot;: &quot;0000000000000000&quot;,
+		&quot;timestamp&quot;: 1537426002627,
+		&quot;bodyHash&quot;: &quot;441a7570b535215b9d25f1a16f05e6c12fb33151d5fa74203f49aa74733a713e&quot;,
+		&quot;bodyLength&quot;: 674,
+		&quot;signature&quot;: &quot;1c426c1b0579b0fd724548720c3927283abd00c564f48e2f08e7b0084bd95161c26793d586b401c3c5f5f38b70911c52847f7ae5ef4522f269dcc744e7eb277a52&quot;,
+		&quot;body&quot;: &quot;[{\&quot;method\&quot;:\&quot;create\&quot;,\&quot;params\&quot;:[{\&quot;branchId\&quot;:\&quot;a08ee962cd8b2bd0edbfee989c1a9f7884d26532\&quot;,\&quot;branch\&quot;:{\&quot;name\&quot;:\&quot;YEED\&quot;,\&quot;owner\&quot;:\&quot;c91e9d46dd4b7584f0b6348ee18277c10fd7cb94\&quot;,\&quot;symbol\&quot;:\&quot;YEED\&quot;,\&quot;property\&quot;:\&quot;currency\&quot;,\&quot;type\&quot;:\&quot;immunity\&quot;,\&quot;timestamp\&quot;:1536756751728,\&quot;description\&quot;:\&quot;YEED is the currency used inside YGGDRASH. The vitality of the new branch chain is decided by the amount of YEED, which will be consumed gradually.\&quot;,\&quot;tag\&quot;:0.1,\&quot;version\&quot;:\&quot;0xeeabcaf6cf907e0fd27a0d1f305313e9c1069c5d7f8729d227110012c9b37025\&quot;,\&quot;version_history\&quot;:[\&quot;0xeeabcaf6cf907e0fd27a0d1f305313e9c1069c5d7f8729d227110012c9b37025\&quot;],\&quot;reference_address\&quot;:\&quot;\&quot;,\&quot;reserve_address\&quot;:\&quot;0x9cc060690705a13078634637b1d2a5f2fe1b8096\&quot;}}]}]&quot;,
+		&quot;author&quot;: &quot;aaa2aaab0fb041c5cb2a60a12291cbc3097352bb&quot;,
+		&quot;hash&quot;: &quot;3799a13a481b5df87a4fb18db20286754a638d784d397f962ed4e4dba54cb52d&quot;
+	}
+}
+
+// Request (to Stem chain)
+{
+	&quot;id&quot;: &quot;1480899822&quot;,
+	&quot;jsonrpc&quot;: &quot;2.0&quot;,
+	&quot;method&quot;: &quot;getTransactionCountByBlockNumber&quot;,
+	&quot;params&quot;: {
+		&quot;branchId&quot;: &quot;fe7b7c93dd23f78e12ad42650595bc0f874c88f7&quot;,
+		&quot;txIndexPosition&quot;: 2,
+		&quot;tag&quot;: &quot;latest&quot;
+	}
+}
+
+// Result (from Stem chain)
+{
+	&quot;jsonrpc&quot;: &quot;2.0&quot;,
+	&quot;id&quot;: &quot;1480899822&quot;,
+	&quot;result&quot;: {
+		&quot;chain&quot;: &quot;fe7b7c93dd23f78e12ad42650595bc0f874c88f7&quot;,
+		&quot;version&quot;: &quot;0000000000000000&quot;,
+		&quot;type&quot;: &quot;0000000000000000&quot;,
+		&quot;timestamp&quot;: 1537426969582,
+		&quot;bodyHash&quot;: &quot;441a7570b535215b9d25f1a16f05e6c12fb33151d5fa74203f49aa74733a713e&quot;,
+		&quot;bodyLength&quot;: 674,
+		&quot;signature&quot;: &quot;1bafca750fb41b187b04194e6cfb21b19add3cc7ae2fdff37e6dfdef6cc19b6cd25684b00fa31f7de6b326592ab467d0eda85b0c6ec1b24681cf40173a920c57a7&quot;,
+		&quot;body&quot;: &quot;[{\&quot;method\&quot;:\&quot;create\&quot;,\&quot;params\&quot;:[{\&quot;branchId\&quot;:\&quot;a08ee962cd8b2bd0edbfee989c1a9f7884d26532\&quot;,\&quot;branch\&quot;:{\&quot;name\&quot;:\&quot;YEED\&quot;,\&quot;owner\&quot;:\&quot;c91e9d46dd4b7584f0b6348ee18277c10fd7cb94\&quot;,\&quot;symbol\&quot;:\&quot;YEED\&quot;,\&quot;property\&quot;:\&quot;currency\&quot;,\&quot;type\&quot;:\&quot;immunity\&quot;,\&quot;timestamp\&quot;:1536756751728,\&quot;description\&quot;:\&quot;YEED is the currency used inside YGGDRASH. The vitality of the new branch chain is decided by the amount of YEED, which will be consumed gradually.\&quot;,\&quot;tag\&quot;:0.1,\&quot;version\&quot;:\&quot;0xeeabcaf6cf907e0fd27a0d1f305313e9c1069c5d7f8729d227110012c9b37025\&quot;,\&quot;version_history\&quot;:[\&quot;0xeeabcaf6cf907e0fd27a0d1f305313e9c1069c5d7f8729d227110012c9b37025\&quot;],\&quot;reference_address\&quot;:\&quot;\&quot;,\&quot;reserve_address\&quot;:\&quot;0x9cc060690705a13078634637b1d2a5f2fe1b8096\&quot;}}]}]&quot;,
+		&quot;author&quot;: &quot;aaa2aaab0fb041c5cb2a60a12291cbc3097352bb&quot;,
+		&quot;hash&quot;: &quot;4ab3e4397b8235820e3f3d8e0ed802daefd93ce68cb726dff1edd30603f74a6d&quot;
+	}
+}
+</code></pre></div><hr> <h4 id="gettransactionbyhash"><a href="#gettransactionbyhash" aria-hidden="true" class="header-anchor">#</a> getTransactionByHash</h4> <p>Returns the information about a transaction requested by transaction hash.</p> <p><strong>Parameter</strong></p> <p><code>DATA</code>, 32 Bytes - hash of a transaction</p> <div class="language- extra-class"><pre class="language-text"><code>params: {
+ 		&quot;branchId&quot;: &quot;fe7b7c93dd23f78e12ad42650595bc0f874c88f7&quot;,
+ 		&quot;txId&quot;: &quot;f5912fde84c6a3a44b4e529077ca9bf28feccd847137e44a77cd17e9fb9c1353&quot;
+}
+</code></pre></div><p><strong>Returns</strong></p> <p><code>Object</code> - A transaction object, or <code>null</code> when no transaction was found:</p> <p><strong>Example</strong></p> <div class="language- extra-class"><pre class="language-text"><code>// Request (to Stem chain)
+{
+	&quot;id&quot;: &quot;759202303&quot;,
+	&quot;jsonrpc&quot;: &quot;2.0&quot;,
+	&quot;method&quot;: &quot;getTransactionByHash&quot;,
+	&quot;params&quot;: {
+		&quot;branchId&quot;: &quot;fe7b7c93dd23f78e12ad42650595bc0f874c88f7&quot;,
+		&quot;txId&quot;: &quot;f5912fde84c6a3a44b4e529077ca9bf28feccd847137e44a77cd17e9fb9c1353&quot;
+	}
+}
+
+// Result (from Stem chain)
+{
+	&quot;jsonrpc&quot;: &quot;2.0&quot;,
+	&quot;id&quot;: &quot;759202303&quot;,
+	&quot;result&quot;: {
+		&quot;chain&quot;: &quot;fe7b7c93dd23f78e12ad42650595bc0f874c88f7&quot;,
+		&quot;version&quot;: &quot;0000000000000000&quot;,
+		&quot;type&quot;: &quot;0000000000000000&quot;,
+		&quot;timestamp&quot;: 1537427095442,
+		&quot;bodyHash&quot;: &quot;1332ee7afc829126f40a50b42b075dd103e471e7446287af70923220ba45b9b7&quot;,
+		&quot;bodyLength&quot;: 651,
+		&quot;signature&quot;: &quot;1bf43beb1f39c005e8372985a09cedb0fb9dec39619320bbb17fe44536ebb9518d437db0ff888cc2a9c5271d726ec412077fd060d81fada5e2d04e23a1777ada6c&quot;,
+		&quot;body&quot;: &quot;[{\&quot;method\&quot;:\&quot;create\&quot;,\&quot;params\&quot;:[{\&quot;branchId\&quot;:\&quot;17024be871734c7d595a0ac7c5dfcc79396c7d7b\&quot;,\&quot;branch\&quot;:{\&quot;name\&quot;:\&quot;Sacred Water\&quot;,\&quot;owner\&quot;:\&quot;aaa2aaab0fb041c5cb2a60a12291cbc3097352bb\&quot;,\&quot;symbol\&quot;:\&quot;SW\&quot;,\&quot;property\&quot;:\&quot;reputation\&quot;,\&quot;type\&quot;:\&quot;immunity\&quot;,\&quot;timestamp\&quot;:1537340256736,\&quot;description\&quot;:\&quot;Reputation Score Evaluation Chain. Contribute your time and benefit the ecosystem to earn a higher reputation score.\&quot;,\&quot;tag\&quot;:0.1,\&quot;version\&quot;:\&quot;0xebe69520b56c81e1ad2ceec4c2f9ed9405376fa56e9a9713a026fb305989e042\&quot;,\&quot;reference_address\&quot;:\&quot;\&quot;,\&quot;reserve_address\&quot;:\&quot;0x2831de120827570cf8c7cfcb9b788c222e307de4\&quot;,\&quot;version_history\&quot;:[\&quot;0xebe69520b56c81e1ad2ceec4c2f9ed9405376fa56e9a9713a026fb305989e042\&quot;]}}]}]&quot;,
+		&quot;author&quot;: &quot;aaa2aaab0fb041c5cb2a60a12291cbc3097352bb&quot;,
+		&quot;hash&quot;: &quot;f5912fde84c6a3a44b4e529077ca9bf28feccd847137e44a77cd17e9fb9c1353&quot;
+	}
+}
+</code></pre></div><hr> <h4 id="gettransactionbyblockhash"><a href="#gettransactionbyblockhash" aria-hidden="true" class="header-anchor">#</a> getTransactionByBlockHash</h4> <p>Returns information about a transaction by block hash and transaction index position.</p> <p><strong>Parameter</strong></p> <ol><li><code>DATA</code>, 32 Bytes - hash of a block.</li> <li><code>QUANTITY</code> - integer of the transaction index position.</li></ol> <div class="language- extra-class"><pre class="language-text"><code>params: [
+   1,
+   '0x76a9fa4681a8abf94618543872444ba079d5302203ac6a5b5b2087a9f56ea8bf' 
+]
+</code></pre></div><p><strong>Returns</strong></p> <p>See <a href="">getTransactionByHash</a></p> <p><strong>Example</strong></p> <div class="language- extra-class"><pre class="language-text"><code>// Request (to Stem chain)
+{
+	&quot;id&quot;: &quot;1141387996&quot;,
+	&quot;jsonrpc&quot;: &quot;2.0&quot;,
+	&quot;method&quot;: &quot;getTransactionByBlockHash&quot;,
+	&quot;params&quot;: {
+		&quot;branchId&quot;: &quot;fe7b7c93dd23f78e12ad42650595bc0f874c88f7&quot;,
+		&quot;txIndexPosition&quot;: 2,
+		&quot;blockId&quot;: &quot;5ef71a90c6d99c7bc13bfbcaffb50cb89210678e99ed6626c9d2f378700b392c&quot;
+	}
+}
+
+// Result (from Stem chain)
+{
+	&quot;jsonrpc&quot;: &quot;2.0&quot;,
+	&quot;id&quot;: &quot;1141387996&quot;,
+	&quot;result&quot;: {
+		&quot;chain&quot;: &quot;fe7b7c93dd23f78e12ad42650595bc0f874c88f7&quot;,
+		&quot;version&quot;: &quot;0000000000000000&quot;,
+		&quot;type&quot;: &quot;0000000000000000&quot;,
+		&quot;timestamp&quot;: 1537427094634,
+		&quot;bodyHash&quot;: &quot;1332ee7afc829126f40a50b42b075dd103e471e7446287af70923220ba45b9b7&quot;,
+		&quot;bodyLength&quot;: 651,
+		&quot;signature&quot;: &quot;1cb27a3625148c380ce0624b814c9f2c3ccad056351145c0d1e839328ed7a830b76b721423803e17f5090aa0814cf88c89919fb32254139b54c550253bcfe2c768&quot;,
+		&quot;body&quot;: &quot;[{\&quot;method\&quot;:\&quot;create\&quot;,\&quot;params\&quot;:[{\&quot;branchId\&quot;:\&quot;17024be871734c7d595a0ac7c5dfcc79396c7d7b\&quot;,\&quot;branch\&quot;:{\&quot;name\&quot;:\&quot;Sacred Water\&quot;,\&quot;owner\&quot;:\&quot;aaa2aaab0fb041c5cb2a60a12291cbc3097352bb\&quot;,\&quot;symbol\&quot;:\&quot;SW\&quot;,\&quot;property\&quot;:\&quot;reputation\&quot;,\&quot;type\&quot;:\&quot;immunity\&quot;,\&quot;timestamp\&quot;:1537340256736,\&quot;description\&quot;:\&quot;Reputation Score Evaluation Chain. Contribute your time and benefit the ecosystem to earn a higher reputation score.\&quot;,\&quot;tag\&quot;:0.1,\&quot;version\&quot;:\&quot;0xebe69520b56c81e1ad2ceec4c2f9ed9405376fa56e9a9713a026fb305989e042\&quot;,\&quot;reference_address\&quot;:\&quot;\&quot;,\&quot;reserve_address\&quot;:\&quot;0x2831de120827570cf8c7cfcb9b788c222e307de4\&quot;,\&quot;version_history\&quot;:[\&quot;0xebe69520b56c81e1ad2ceec4c2f9ed9405376fa56e9a9713a026fb305989e042\&quot;]}}]}]&quot;,
+		&quot;author&quot;: &quot;aaa2aaab0fb041c5cb2a60a12291cbc3097352bb&quot;,
+		&quot;hash&quot;: &quot;98f2d644cedc38362f28cb8b624287ed014563c97d4eb0048270b7381daea7a1&quot;
+	}
+}
+</code></pre></div><hr> <h4 id="sendtransaction"><a href="#sendtransaction" aria-hidden="true" class="header-anchor">#</a> sendTransaction</h4> <p>Creates new message call transaction or a contract creation, if the data field contains code.</p> <p><strong>Parameter</strong></p> <p><code>Object</code> - The transaction object</p> <p><strong>Returns</strong></p> <p><code>DATA</code>, 32 Bytes - the transaction hash, or the zero hash if the transaction is not yet available.</p> <p><strong>Example</strong></p> <div class="language- extra-class"><pre class="language-text"><code>// Request (to Stem chain)
+{
+	&quot;id&quot;: &quot;1634388869&quot;,
+	&quot;jsonrpc&quot;: &quot;2.0&quot;,
+	&quot;method&quot;: &quot;sendTransaction&quot;,
+	&quot;params&quot;: {
+		&quot;tx&quot;: {
+			&quot;chain&quot;: &quot;fe7b7c93dd23f78e12ad42650595bc0f874c88f7&quot;,
+			&quot;version&quot;: &quot;0000000000000000&quot;,
+			&quot;type&quot;: &quot;0000000000000000&quot;,
+			&quot;timestamp&quot;: 1537409777132,
+			&quot;bodyHash&quot;: &quot;441a7570b535215b9d25f1a16f05e6c12fb33151d5fa74203f49aa74733a713e&quot;,
+			&quot;bodyLength&quot;: 674,
+			&quot;signature&quot;: &quot;1c84b0d2894b312043a91c4e61b768d62040ed7f4717d99d9aad9f774a0632d0f113a344ef1ade11b6ecae2b021972032508158f8b0ff919857f5da0773fb73c94&quot;,
+			&quot;body&quot;: &quot;[{\&quot;method\&quot;:\&quot;create\&quot;,\&quot;params\&quot;:[{\&quot;branchId\&quot;:\&quot;a08ee962cd8b2bd0edbfee989c1a9f7884d26532\&quot;,\&quot;branch\&quot;:{\&quot;name\&quot;:\&quot;YEED\&quot;,\&quot;owner\&quot;:\&quot;c91e9d46dd4b7584f0b6348ee18277c10fd7cb94\&quot;,\&quot;symbol\&quot;:\&quot;YEED\&quot;,\&quot;property\&quot;:\&quot;currency\&quot;,\&quot;type\&quot;:\&quot;immunity\&quot;,\&quot;timestamp\&quot;:1536756751728,\&quot;description\&quot;:\&quot;YEED is the currency used inside YGGDRASH. The vitality of the new branch chain is decided by the amount of YEED, which will be consumed gradually.\&quot;,\&quot;tag\&quot;:0.1,\&quot;version\&quot;:\&quot;0xeeabcaf6cf907e0fd27a0d1f305313e9c1069c5d7f8729d227110012c9b37025\&quot;,\&quot;version_history\&quot;:[\&quot;0xeeabcaf6cf907e0fd27a0d1f305313e9c1069c5d7f8729d227110012c9b37025\&quot;],\&quot;reference_address\&quot;:\&quot;\&quot;,\&quot;reserve_address\&quot;:\&quot;0x9cc060690705a13078634637b1d2a5f2fe1b8096\&quot;}}]}]&quot;,
+			&quot;author&quot;: &quot;aaa2aaab0fb041c5cb2a60a12291cbc3097352bb&quot;,
+			&quot;hash&quot;: &quot;d7cf6612214effa4013ac6fee62894c1a0f9b47b1ddcffb2a62a6398b200ff31&quot;
+		}
+	}
+} 
+
+// Result (from Stem chain)
+{
+	&quot;jsonrpc&quot;: &quot;2.0&quot;,
+	&quot;id&quot;: &quot;1634388869&quot;,
+	&quot;result&quot;: &quot;d7cf6612214effa4013ac6fee62894c1a0f9b47b1ddcffb2a62a6398b200ff31&quot;
+}
+
+// Request (to Yeed chain)
+{
+	&quot;id&quot;: &quot;905164516&quot;,
+	&quot;jsonrpc&quot;: &quot;2.0&quot;,
+	&quot;method&quot;: &quot;sendTransaction&quot;,
+	&quot;params&quot;: {
+		&quot;tx&quot;: {
+			&quot;chain&quot;: &quot;a08ee962cd8b2bd0edbfee989c1a9f7884d26532&quot;,
+			&quot;version&quot;: &quot;0000000000000000&quot;,
+			&quot;type&quot;: &quot;0000000000000000&quot;,
+			&quot;timestamp&quot;: 1537409809998,
+			&quot;bodyHash&quot;: &quot;0e6c084a898864eac534a089a79247de8cf3325d076803d90e0cf94e59cb6bd2&quot;,
+			&quot;bodyLength&quot;: 102,
+			&quot;signature&quot;: &quot;1ca3861872ae2ff66ad2c2bb9f6909a32ffcdac43299160908afeb4afff3b2147c714d36fbbcd85ebb60cc89b08fa8fb2145c5ca673fa1e006a50d93659ea13e0e&quot;,
+			&quot;body&quot;: &quot;[{\&quot;method\&quot;:\&quot;transfer\&quot;,\&quot;params\&quot;:[{\&quot;address\&quot;:\&quot;e1980adeafbb9ac6c9be60955484ab1547ab0b76\&quot;,\&quot;amount\&quot;:100}]}]&quot;,
+			&quot;author&quot;: &quot;aaa2aaab0fb041c5cb2a60a12291cbc3097352bb&quot;,
+			&quot;hash&quot;: &quot;a27cc5bd50672f04423110f76784d821536c24884b3f1425b25dba3831de3c56&quot;
+		}
+	}
+}
+
+// Result (from Yeed chain)
+{
+	&quot;jsonrpc&quot;: &quot;2.0&quot;,
+	&quot;id&quot;: &quot;905164516&quot;,
+	&quot;result&quot;: &quot;a27cc5bd50672f04423110f76784d821536c24884b3f1425b25dba3831de3c56&quot;
+} 
+</code></pre></div><hr> <h4 id="sendrawtransaction"><a href="#sendrawtransaction" aria-hidden="true" class="header-anchor">#</a> sendRawTransaction</h4> <p>Creates new message call transaction or a contract creation for signed transactions.</p> <p><strong>Parameter</strong></p> <p><code>DATA</code>, The signed transaction data.</p> <div class="language- extra-class"><pre class="language-text"><code>params: [
+    &quot;MDAwMDAwMDDefl5jdaRgKKIzV/pKUUBLyIzsEyZC3tU3JVTch7UJHAAAjbWEJtGkAAAAAAAAAAIcBVYKn9ycJe3+/lo0jbGC7ZsoPnNLOa+4J3haf3kiIy11MEuT1cR3SrLYid8GeJrbD9H6JAm8Qu601eckAiN36HsiaWQiOiIwIiwibmFtZSI6IlJhY2hhZWwiLCJhZ2UiOiIyNyJ9&quot;
+]
+</code></pre></div><p><strong>Returns</strong></p> <p><code>DATA</code>, 32 Bytes - the transaction hash, or the zero hash if the transaction is not yet available.</p> <p><strong>Example</strong></p> <div class="language- extra-class"><pre class="language-text"><code>// Request
+{
+    &quot;id&quot;:&quot;1797225445&quot;,
+    &quot;jsonrpc&quot;:&quot;2.0&quot;,
+    &quot;method&quot;:&quot;sendRawTransaction&quot;,
+    &quot;params&quot;:{
+                &quot;rawTx&quot;:&quot;MDAwMDAwMDDefl5jdaRgKKIzV/pKUUBLyIzsEyZC3tU3JVTch7UJHAAAjbWEJtGkAAAAAAAAAAIcBVYKn9ycJe3+/lo0jbGC7ZsoPnNLOa+4J3haf3kiIy11MEuT1cR3SrLYid8GeJrbD9H6JAm8Qu601eckAiN36HsiaWQiOiIwIiwibmFtZSI6IlJhY2hhZWwiLCJhZ2UiOiIyNyJ9&quot;
+             }
+}
+
+// Result
+{
+    &quot;jsonrpc&quot;:&quot;2.0&quot;,
+    &quot;id&quot;:&quot;1797225445&quot;,
+    &quot;result&quot;:&quot;3PAOrAaNlZYixCxMzeR25bYLsnJ2bykSxd5ZyDVzcgE=&quot;
+}
+</code></pre></div><hr> <h4 id="newpendingtransactionfilter"><a href="#newpendingtransactionfilter" aria-hidden="true" class="header-anchor">#</a> newPendingTransactionFilter</h4> <p>Creates a filter in the node, to notify when new pending transactions arrive.</p> <p><strong>Parameter</strong></p> <p>none</p> <p><strong>Returns</strong></p> <p><code>QUANTITY</code> - A filter id.</p> <p><strong>Example</strong></p> <div class="language- extra-class"><pre class="language-text"><code>// Request (to Stem chain)
+{
+	&quot;id&quot;: &quot;1823533023&quot;,
+	&quot;jsonrpc&quot;: &quot;2.0&quot;,
+	&quot;method&quot;: &quot;newPendingTransactionFilter&quot;,
+	&quot;params&quot;: {
+		&quot;branchId&quot;: &quot;fe7b7c93dd23f78e12ad42650595bc0f874c88f7&quot;
+	}
+}
+
+// Result (from Stem chain)
+{
+	&quot;jsonrpc&quot;: &quot;2.0&quot;,
+	&quot;id&quot;: &quot;1823533023&quot;,
+	&quot;result&quot;: 0
+}
+
+// Request (To Yeed chain)
+{
+	&quot;id&quot;: &quot;813535546&quot;,
+	&quot;jsonrpc&quot;: &quot;2.0&quot;,
+	&quot;method&quot;: &quot;newPendingTransactionFilter&quot;,
+	&quot;params&quot;: {
+		&quot;branchId&quot;: &quot;a08ee962cd8b2bd0edbfee989c1a9f7884d26532&quot;
+	}
+}
+
+// Result (from Yeed chain)
+{
+	&quot;jsonrpc&quot;: &quot;2.0&quot;,
+	&quot;id&quot;: &quot;813535546&quot;,
+	&quot;result&quot;: 1
+}
+</code></pre></div><hr> <h4 id="gettransactionreceipt"><a href="#gettransactionreceipt" aria-hidden="true" class="header-anchor">#</a> getTransactionReceipt</h4> <p>Returns the TransactionReceipt of transaction hash.</p> <p><strong>Parameter</strong></p> <p><code>DATA</code>, 32 Bytes - the transaction hash</p> <p><strong>Returns</strong></p> <p><code>Object</code> - A TransactionReceipt object, or null when no TransactionReceipt was found:</p> <p><strong>Example</strong></p> <div class="language- extra-class"><pre class="language-text"><code>// Request (to Stem chain)
+{
+	&quot;id&quot;: &quot;1224098261&quot;,
+	&quot;jsonrpc&quot;: &quot;2.0&quot;,
+	&quot;method&quot;: &quot;getTransactionReceipt&quot;,
+	&quot;params&quot;: {
+		&quot;branchId&quot;: &quot;fe7b7c93dd23f78e12ad42650595bc0f874c88f7&quot;,
+		&quot;txId&quot;: &quot;d7cf6612214effa4013ac6fee62894c1a0f9b47b1ddcffb2a62a6398b200ff31&quot;
+	}
+}
+
+// Result (from Stem chain)
+{
+	&quot;jsonrpc&quot;: &quot;2.0&quot;,
+	&quot;id&quot;: &quot;1224098261&quot;,
+	&quot;result&quot;: {
+		&quot;transactionHash&quot;: &quot;d7cf6612214effa4013ac6fee62894c1a0f9b47b1ddcffb2a62a6398b200ff31&quot;,
+		&quot;transactionIndex&quot;: 1,
+		&quot;blockHash&quot;: &quot;0xc6ef2fc5426d6ad6fd9e2a26abeab0aa2411b7ab17f30a99d3cb96aed1d1055b&quot;,
+		&quot;yeedUsed&quot;: 30000,
+		&quot;branchAddress&quot;: &quot;0xb60e8dd61c5d32be8058bb8eb970870f07233155&quot;,
+		&quot;txLog&quot;: {
+			&quot;method&quot;: &quot;create&quot;,
+			&quot;a08ee962cd8b2bd0edbfee989c1a9f7884d26532&quot;: {
+				&quot;owner&quot;: &quot;c91e9d46dd4b7584f0b6348ee18277c10fd7cb94&quot;,
+				&quot;reference_address&quot;: &quot;&quot;,
+				&quot;symbol&quot;: &quot;YEED&quot;,
+				&quot;reserve_address&quot;: &quot;0x9cc060690705a13078634637b1d2a5f2fe1b8096&quot;,
+				&quot;name&quot;: &quot;YEED&quot;,
+				&quot;property&quot;: &quot;currency&quot;,
+				&quot;description&quot;: &quot;YEED is the currency used inside YGGDRASH. The vitality of the new branch chain is decided by the amount of YEED, which will be consumed gradually.&quot;,
+				&quot;tag&quot;: 0.1,
+				&quot;version_history&quot;: [&quot;0xeeabcaf6cf907e0fd27a0d1f305313e9c1069c5d7f8729d227110012c9b37025&quot;],
+				&quot;type&quot;: &quot;immunity&quot;,
+				&quot;version&quot;: &quot;0xeeabcaf6cf907e0fd27a0d1f305313e9c1069c5d7f8729d227110012c9b37025&quot;,
+				&quot;timestamp&quot;: 1536756751728
+			}
+		},
+		&quot;status&quot;: 1,
+		&quot;success&quot;: true
+	}
+}
+
+// Request (to Yeed chain)
+{
+	&quot;id&quot;: &quot;1288216515&quot;,
+	&quot;jsonrpc&quot;: &quot;2.0&quot;,
+	&quot;method&quot;: &quot;getTransactionReceipt&quot;,
+	&quot;params&quot;: {
+		&quot;branchId&quot;: &quot;a08ee962cd8b2bd0edbfee989c1a9f7884d26532&quot;,
+		&quot;txId&quot;: &quot;a27cc5bd50672f04423110f76784d821536c24884b3f1425b25dba3831de3c56&quot;
+	}
+}
+
+// Result (from Stem chain)
+{
+	&quot;jsonrpc&quot;: &quot;2.0&quot;,
+	&quot;id&quot;: &quot;1288216515&quot;,
+	&quot;result&quot;: {
+		&quot;transactionHash&quot;: &quot;a27cc5bd50672f04423110f76784d821536c24884b3f1425b25dba3831de3c56&quot;,
+		&quot;transactionIndex&quot;: 1,
+		&quot;blockHash&quot;: &quot;0xc6ef2fc5426d6ad6fd9e2a26abeab0aa2411b7ab17f30a99d3cb96aed1d1055b&quot;,
+		&quot;yeedUsed&quot;: 30000,
+		&quot;branchAddress&quot;: &quot;0xb60e8dd61c5d32be8058bb8eb970870f07233155&quot;,
+		&quot;txLog&quot;: {
+			&quot;amount&quot;: &quot;100&quot;,
+			&quot;method&quot;: &quot;transfer&quot;,
+			&quot;from&quot;: &quot;aaa2aaab0fb041c5cb2a60a12291cbc3097352bb&quot;,
+			&quot;to&quot;: &quot;e1980adeafbb9ac6c9be60955484ab1547ab0b76&quot;
+		},
+		&quot;status&quot;: 0,
+		&quot;success&quot;: false
+	}
+}
+</code></pre></div><hr> <h4 id="getalltransactionreceipt"><a href="#getalltransactionreceipt" aria-hidden="true" class="header-anchor">#</a> getAllTransactionReceipt</h4> <p>Returns all TransactionReceipts.</p> <p><strong>Parameter</strong></p> <p>None</p> <p><strong>Returns</strong></p> <p><code>HashMap of DATA</code>, List of all TransactionReceipts</p> <p><strong>Example</strong></p> <div class="language- extra-class"><pre class="language-text"><code>/ Request (to Stem chain)
+{
+  &quot;id&quot;: &quot;1890315358&quot;,
+  &quot;jsonrpc&quot;: &quot;2.0&quot;,
+  &quot;method&quot;: &quot;getTransactionReceipt&quot;,
+  &quot;params&quot;: {
+    &quot;txId&quot;: &quot;2da7c6e0bbb35365a1b57c7cdb9b5a434a41c43b6374018d9303b87576c157a9&quot;
+  }
+}
+
+// Result (from Stem chain)
+{
+	&quot;jsonrpc&quot;: &quot;2.0&quot;,
+	&quot;id&quot;: &quot;395916987&quot;,
+	&quot;result&quot;: {
+		&quot;76f2292411ea0c8233cc5302ccb7035d16e13d9b6f6c53cb26a8afd126cc9864&quot;: {
+			&quot;transactionHash&quot;: &quot;76f2292411ea0c8233cc5302ccb7035d16e13d9b6f6c53cb26a8afd126cc9864&quot;,
+			&quot;transactionIndex&quot;: 1,
+			&quot;blockHash&quot;: &quot;0xc6ef2fc5426d6ad6fd9e2a26abeab0aa2411b7ab17f30a99d3cb96aed1d1055b&quot;,
+			&quot;yeedUsed&quot;: 30000,
+			&quot;branchAddress&quot;: &quot;0xb60e8dd61c5d32be8058bb8eb970870f07233155&quot;,
+			&quot;txLog&quot;: {
+				&quot;method&quot;: &quot;genesis&quot;,
+				&quot;fe7b7c93dd23f78e12ad42650595bc0f874c88f7&quot;: {
+					&quot;reference_address&quot;: &quot;&quot;,
+					&quot;owner&quot;: &quot;c91e9d46dd4b7584f0b6348ee18277c10fd7cb94&quot;,
+					&quot;symbol&quot;: &quot;STEM&quot;,
+					&quot;reserve_address&quot;: &quot;0xcee3d4755e47055b530deeba062c5bd0c17eb00f&quot;,
+					&quot;name&quot;: &quot;STEM&quot;,
+					&quot;property&quot;: &quot;ecosystem&quot;,
+					&quot;description&quot;: &quot;The Basis of the YGGDRASH Ecosystem. It is also an aggregate and a blockchain containing information of all Branch Chains.&quot;,
+					&quot;tag&quot;: 0.1,
+					&quot;version_history&quot;: [&quot;0xcc9612ff91ff844938acdb6608e58506a2f21b8a5d77e88726c0897e8d1d02c0&quot;],
+					&quot;type&quot;: &quot;immunity&quot;,
+					&quot;version&quot;: &quot;0xcc9612ff91ff844938acdb6608e58506a2f21b8a5d77e88726c0897e8d1d02c0&quot;,
+					&quot;timestamp&quot;: 1536755670444
+				}
+			},
+			&quot;status&quot;: 1,
+			&quot;success&quot;: true
+		},
+		&quot;5a0d54a81a43142c1292fa35c6d333279cf06e2a9d0886c6a713acd6163e0d72&quot;: {
+			&quot;transactionHash&quot;: &quot;5a0d54a81a43142c1292fa35c6d333279cf06e2a9d0886c6a713acd6163e0d72&quot;,
+			&quot;transactionIndex&quot;: 1,
+			&quot;blockHash&quot;: &quot;0xc6ef2fc5426d6ad6fd9e2a26abeab0aa2411b7ab17f30a99d3cb96aed1d1055b&quot;,
+			&quot;yeedUsed&quot;: 30000,
+			&quot;branchAddress&quot;: &quot;0xb60e8dd61c5d32be8058bb8eb970870f07233155&quot;,
+			&quot;txLog&quot;: {
+				&quot;method&quot;: &quot;create&quot;,
+				&quot;ee0adfb66a13b07d5520adb270f71979b508255d&quot;: {
+					&quot;owner&quot;: &quot;c91e9d46dd4b7584f0b6348ee18277c10fd7cb94&quot;,
+					&quot;reference_address&quot;: &quot;&quot;,
+					&quot;symbol&quot;: &quot;TEST1&quot;,
+					&quot;reserve_address&quot;: &quot;0x2G5f8A319550f80f9D362ab2eE0D1f023EC665a3&quot;,
+					&quot;name&quot;: &quot;TEST1&quot;,
+					&quot;property&quot;: &quot;dex&quot;,
+					&quot;description&quot;: &quot;TEST1&quot;,
+					&quot;tag&quot;: 0.1,
+					&quot;version_history&quot;: [&quot;0xe1980adeafbb9ac6c9be60955484ab1547ab0b76&quot;],
+					&quot;type&quot;: &quot;immunity&quot;,
+					&quot;version&quot;: &quot;0xe1980adeafbb9ac6c9be60955484ab1547ab0b76&quot;,
+					&quot;timestamp&quot;: 1536756751728
+				}
+			},
+			&quot;status&quot;: 1,
+			&quot;success&quot;: true
+		},
+		&quot;d7cf6612214effa4013ac6fee62894c1a0f9b47b1ddcffb2a62a6398b200ff31&quot;: {
+			&quot;transactionHash&quot;: &quot;d7cf6612214effa4013ac6fee62894c1a0f9b47b1ddcffb2a62a6398b200ff31&quot;,
+			&quot;transactionIndex&quot;: 1,
+			&quot;blockHash&quot;: &quot;0xc6ef2fc5426d6ad6fd9e2a26abeab0aa2411b7ab17f30a99d3cb96aed1d1055b&quot;,
+			&quot;yeedUsed&quot;: 30000,
+			&quot;branchAddress&quot;: &quot;0xb60e8dd61c5d32be8058bb8eb970870f07233155&quot;,
+			&quot;txLog&quot;: {
+				&quot;method&quot;: &quot;create&quot;,
+				&quot;a08ee962cd8b2bd0edbfee989c1a9f7884d26532&quot;: {
+					&quot;owner&quot;: &quot;c91e9d46dd4b7584f0b6348ee18277c10fd7cb94&quot;,
+					&quot;reference_address&quot;: &quot;&quot;,
+					&quot;symbol&quot;: &quot;YEED&quot;,
+					&quot;reserve_address&quot;: &quot;0x9cc060690705a13078634637b1d2a5f2fe1b8096&quot;,
+					&quot;name&quot;: &quot;YEED&quot;,
+					&quot;property&quot;: &quot;currency&quot;,
+					&quot;description&quot;: &quot;YEED is the currency used inside YGGDRASH. The vitality of the new branch chain is decided by the amount of YEED, which will be consumed gradually.&quot;,
+					&quot;tag&quot;: 0.1,
+					&quot;version_history&quot;: [&quot;0xeeabcaf6cf907e0fd27a0d1f305313e9c1069c5d7f8729d227110012c9b37025&quot;],
+					&quot;type&quot;: &quot;immunity&quot;,
+					&quot;version&quot;: &quot;0xeeabcaf6cf907e0fd27a0d1f305313e9c1069c5d7f8729d227110012c9b37025&quot;,
+					&quot;timestamp&quot;: 1536756751728
+				}
+			},
+			&quot;status&quot;: 1,
+			&quot;success&quot;: true
+		},
+		&quot;216a54011c7234651002ead4610d5cb06a19d79ef0278df5251fffe3795b9196&quot;: {
+			&quot;transactionHash&quot;: &quot;216a54011c7234651002ead4610d5cb06a19d79ef0278df5251fffe3795b9196&quot;,
+			&quot;transactionIndex&quot;: 1,
+			&quot;blockHash&quot;: &quot;0xc6ef2fc5426d6ad6fd9e2a26abeab0aa2411b7ab17f30a99d3cb96aed1d1055b&quot;,
+			&quot;yeedUsed&quot;: 30000,
+			&quot;branchAddress&quot;: &quot;0xb60e8dd61c5d32be8058bb8eb970870f07233155&quot;,
+			&quot;txLog&quot;: {
+				&quot;method&quot;: &quot;create&quot;,
+				&quot;ee0adfb66a13b07d5520adb270f71979b508255d&quot;: {
+					&quot;owner&quot;: &quot;c91e9d46dd4b7584f0b6348ee18277c10fd7cb94&quot;,
+					&quot;reference_address&quot;: &quot;&quot;,
+					&quot;symbol&quot;: &quot;TEST1&quot;,
+					&quot;reserve_address&quot;: &quot;0x2G5f8A319550f80f9D362ab2eE0D1f023EC665a3&quot;,
+					&quot;name&quot;: &quot;TEST1&quot;,
+					&quot;property&quot;: &quot;dex&quot;,
+					&quot;description&quot;: &quot;TEST1&quot;,
+					&quot;tag&quot;: 0.1,
+					&quot;version_history&quot;: [&quot;0xe1980adeafbb9ac6c9be60955484ab1547ab0b76&quot;],
+					&quot;type&quot;: &quot;immunity&quot;,
+					&quot;version&quot;: &quot;0xe1980adeafbb9ac6c9be60955484ab1547ab0b76&quot;,
+					&quot;timestamp&quot;: 1536756751728
+				}
+			},
+			&quot;status&quot;: 1,
+			&quot;success&quot;: true
+		}
+	}
+}
+
+// Request (to Yeed chain)
+{
+	&quot;id&quot;: &quot;660112712&quot;,
+	&quot;jsonrpc&quot;: &quot;2.0&quot;,
+	&quot;method&quot;: &quot;getAllTransactionReceipt&quot;,
+	&quot;params&quot;: {
+		&quot;branchId&quot;: &quot;a08ee962cd8b2bd0edbfee989c1a9f7884d26532&quot;
+	}
+}
+
+// Response (from Yeed chain)
+{
+	&quot;jsonrpc&quot;: &quot;2.0&quot;,
+	&quot;id&quot;: &quot;660112712&quot;,
+	&quot;result&quot;: {
+		&quot;70b7ad44389664f3cb70ec7d9de975bd58e7a52d5810091f8415715deb5119c5&quot;: {
+			&quot;transactionHash&quot;: &quot;70b7ad44389664f3cb70ec7d9de975bd58e7a52d5810091f8415715deb5119c5&quot;,
+			&quot;transactionIndex&quot;: 1,
+			&quot;blockHash&quot;: &quot;0xc6ef2fc5426d6ad6fd9e2a26abeab0aa2411b7ab17f30a99d3cb96aed1d1055b&quot;,
+			&quot;yeedUsed&quot;: 30000,
+			&quot;branchAddress&quot;: &quot;0xb60e8dd61c5d32be8058bb8eb970870f07233155&quot;,
+			&quot;txLog&quot;: {
+				&quot;balance[0]&quot;: 1000000000,
+				&quot;method&quot;: &quot;genesis&quot;,
+				&quot;frontier[0]&quot;: &quot;c91e9d46dd4b7584f0b6348ee18277c10fd7cb94&quot;
+			},
+			&quot;status&quot;: 0,
+			&quot;success&quot;: false
+		},
+		&quot;a27cc5bd50672f04423110f76784d821536c24884b3f1425b25dba3831de3c56&quot;: {
+			&quot;transactionHash&quot;: &quot;a27cc5bd50672f04423110f76784d821536c24884b3f1425b25dba3831de3c56&quot;,
+			&quot;transactionIndex&quot;: 1,
+			&quot;blockHash&quot;: &quot;0xc6ef2fc5426d6ad6fd9e2a26abeab0aa2411b7ab17f30a99d3cb96aed1d1055b&quot;,
+			&quot;yeedUsed&quot;: 30000,
+			&quot;branchAddress&quot;: &quot;0xb60e8dd61c5d32be8058bb8eb970870f07233155&quot;,
+			&quot;txLog&quot;: {
+				&quot;amount&quot;: &quot;100&quot;,
+				&quot;method&quot;: &quot;transfer&quot;,
+				&quot;from&quot;: &quot;aaa2aaab0fb041c5cb2a60a12291cbc3097352bb&quot;,
+				&quot;to&quot;: &quot;e1980adeafbb9ac6c9be60955484ab1547ab0b76&quot;
+			},
+			&quot;status&quot;: 0,
+			&quot;success&quot;: false
+		}
+	}
+}
+</code></pre></div><hr> <h4 id="contract-query"><a href="#contract-query" aria-hidden="true" class="header-anchor">#</a> [Contract] query</h4> <p>Handles all queries that are dispatched to the contract</p> <p><strong>Parameter</strong></p> <p><code>DATA</code>, string - query</p> <p><strong>Returns</strong></p> <p><code>DATA</code>, string - result of query</p> <p><strong>Example</strong></p> <div class="language- extra-class"><pre class="language-text"><code>//request
+{
+	&quot;id&quot;: &quot;706872067&quot;,
+	&quot;jsonrpc&quot;: &quot;2.0&quot;,
+	&quot;method&quot;: &quot;query&quot;,
+	&quot;params&quot;: [&quot;{\&quot;address\&quot;:\&quot;fe7b7c93dd23f78e12ad42650595bc0f874c88f7\&quot;,\&quot;method\&quot;:\&quot;view\&quot;,\&quot;params\&quot;:[{\&quot;branchId\&quot;:\&quot;a08ee962cd8b2bd0edbfee989c1a9f7884d26532\&quot;}]}&quot;]
+}
+
+//result
+{
+	&quot;jsonrpc&quot;: &quot;2.0&quot;,
+	&quot;id&quot;: &quot;706872067&quot;,
+	&quot;result&quot;: &quot;{\&quot;result\&quot;:\&quot;{\\\&quot;name\\\&quot;:\\\&quot;YEED\\\&quot;,\\\&quot;owner\\\&quot;:\\\&quot;c91e9d46dd4b7584f0b6348ee18277c10fd7cb94\\\&quot;,\\\&quot;symbol\\\&quot;:\\\&quot;YEED\\\&quot;,\\\&quot;property\\\&quot;:\\\&quot;currency\\\&quot;,\\\&quot;type\\\&quot;:\\\&quot;immunity\\\&quot;,\\\&quot;timestamp\\\&quot;:1536756751728,\\\&quot;description\\\&quot;:\\\&quot;YEED is the currency used inside YGGDRASH. The vitality of the new branch chain is decided by the amount of YEED, which will be consumed gradually.\\\&quot;,\\\&quot;tag\\\&quot;:0.1,\\\&quot;version\\\&quot;:\\\&quot;0xeeabcaf6cf907e0fd27a0d1f305313e9c1069c5d7f8729d227110012c9b37025\\\&quot;,\\\&quot;version_history\\\&quot;:[\\\&quot;0xeeabcaf6cf907e0fd27a0d1f305313e9c1069c5d7f8729d227110012c9b37025\\\&quot;],\\\&quot;reference_address\\\&quot;:\\\&quot;\\\&quot;,\\\&quot;reserve_address\\\&quot;:\\\&quot;0x9cc060690705a13078634637b1d2a5f2fe1b8096\\\&quot;}\&quot;}&quot;
+}
+</code></pre></div><hr> <h4 id="peer-add"><a href="#peer-add" aria-hidden="true" class="header-anchor">#</a> [Peer] add</h4> <p>Add Peer</p> <p><strong>Parameter</strong></p> <p><code>Object</code> - Peer object</p> <p><strong>Returns</strong></p> <p><code>Object</code> -  Added peer object</p> <p><strong>Example</strong></p> <div class="language- extra-class"><pre class="language-text"><code>// request
+{
+	&quot;id&quot;: &quot;548925121&quot;,
+	&quot;jsonrpc&quot;: &quot;2.0&quot;,
+	&quot;method&quot;: &quot;add&quot;,
+	&quot;params&quot;: {
+		&quot;peer&quot;: {
+			&quot;host&quot;: &quot;127.0.0.1&quot;,
+			&quot;port&quot;: 32918,
+			&quot;ynodeUri&quot;: &quot;ynode://65bff16c@127.0.0.1:32918&quot;
+		}
+	}
+}
+
+// result
+{
+	&quot;jsonrpc&quot;: &quot;2.0&quot;,
+	&quot;id&quot;: &quot;548925121&quot;,
+	&quot;result&quot;: {
+		&quot;host&quot;: &quot;127.0.0.1&quot;,
+		&quot;port&quot;: 32918,
+		&quot;ynodeUri&quot;: &quot;ynode://65bff16c@127.0.0.1:32918&quot;
+	}
+}
+</code></pre></div><hr> <h4 id="peer-getall"><a href="#peer-getall" aria-hidden="true" class="header-anchor">#</a> [Peer] getAll</h4> <p>Returns all peers</p> <p><strong>Parameter</strong></p> <p>None</p> <p><strong>Returns</strong></p> <p><code>DATA</code> - List of all peers</p> <p><strong>Example</strong></p> <div class="language- extra-class"><pre class="language-text"><code>// request
+{
+	&quot;id&quot;: &quot;1634791329&quot;,
+	&quot;jsonrpc&quot;: &quot;2.0&quot;,
+	&quot;method&quot;: &quot;getAll&quot;
+}
+
+// result
+{
+	&quot;jsonrpc&quot;: &quot;2.0&quot;,
+	&quot;id&quot;: &quot;1634791329&quot;,
+	&quot;result&quot;: [{
+		&quot;host&quot;: &quot;localhost&quot;,
+		&quot;port&quot;: 32918,
+		&quot;ynodeUri&quot;: &quot;ynode://9ea9225f0b7db3c697c0a2e09cdd65046899058d16f73378c1559d61aa3e10cd5dc9337142728f5a02faadafab2b926e2998d5bc2b62c2183fab75ca996de2ce@localhost:32918&quot;
+	}]
+}
+</code></pre></div><hr> <h4 id="peer-getallactivepeer"><a href="#peer-getallactivepeer" aria-hidden="true" class="header-anchor">#</a> [Peer] getAllActivePeer</h4> <p>Returns all active peers</p> <p><strong>Parameter</strong></p> <p>None</p> <p><strong>Returns</strong></p> <p><code>DATA</code>- List of all active Peer as string</p> <p><strong>Example</strong></p> <div class="language- extra-class"><pre class="language-text"><code>// request
+{
+	&quot;id&quot;: &quot;1702019309&quot;,
+	&quot;jsonrpc&quot;: &quot;2.0&quot;,
+	&quot;method&quot;: &quot;getAllActivePeer&quot;
+}
+
+// result
+{
+	&quot;jsonrpc&quot;: &quot;2.0&quot;,
+	&quot;id&quot;: &quot;1702019309&quot;,
+	&quot;result&quot;: []
+}
+</code></pre></div><hr> <h4 id="admin-nodehello"><a href="#admin-nodehello" aria-hidden="true" class="header-anchor">#</a> [admin] nodeHello</h4> <p>Returns a clientHello message(with nonce) for managing node.</p> <p><strong>Parameter</strong></p> <p><code>Object</code> - Command object</p> <p><strong>Returns</strong></p> <p><code>String</code> - String of Command object</p> <p><strong>Example</strong></p> <div class="language- extra-class"><pre class="language-text"><code>// request
+{
+    &quot;id&quot;:&quot;142596201&quot;,
+    &quot;jsonrpc&quot;:&quot;2.0&quot;,
+    &quot;method&quot;:&quot;nodeHello&quot;,
+    &quot;params&quot;:{
+        &quot;command&quot;:{
+            &quot;header&quot;:&quot;{\&quot;timestamp\&quot;:\&quot;00000166818E7D38\&quot;,\&quot;nonce\&quot;:\&quot;0000000000000000baabb165899f98a8\&quot;,\&quot;bodyHash\&quot;:\&quot;3717ec34f5b0345c3b480d9cd402f0be1111c0e04cb9dbe1da5b933e353a5bba\&quot;,\&quot;bodyLength\&quot;:\&quot;0000000000000018\&quot;}&quot;,
+            &quot;signature&quot;:&quot;1b9cd47ba5847be5830a25cb94c407eaad0bbabaf0ad1a984dfb1ed04ccbb96e9f3a8b188568ba46415bb6895c166797417547b1029e3074dfd358a12f982a015a&quot;,
+            &quot;body&quot;:&quot;[{\&quot;method\&quot;:\&quot;nodeHello\&quot;}]&quot;
+        }
+    }
+}
+
+// result
+{
+    &quot;jsonrpc&quot;: &quot;2.0&quot;,
+    &quot;id&quot;: &quot;142596201&quot;,
+    &quot;result&quot;: &quot;{\&quot;header\&quot;:{\&quot;timestamp\&quot;:\&quot;000001668a0a2bae\&quot;,\&quot;nonce\&quot;:\&quot;baabb165899f98a8b90b7251d88f2bcf\&quot;,\&quot;bodyHash\&quot;:\&quot;f5ef2617558e62b5a882187978f411a6ec1d437bb13a5d94e473e680d8ce7e7c\&quot;,\&quot;bodyLength\&quot;:\&quot;000000000000001a\&quot;},\&quot;signature\&quot;:\&quot;1bab5fbd03a51cddd6b4aa0d2a68453b3073d2aa7aa58190073d1d6e647353bbaa0618d5e3f126fb5275a03f17b304b4a6afd293cf631fed6dfa31fb7c70db1c0d\&quot;,\&quot;body\&quot;:[{\&quot;method\&quot;:\&quot;clientHello\&quot;}]}&quot;
+}
+</code></pre></div><hr> <h4 id="admin-requestcommand"><a href="#admin-requestcommand" aria-hidden="true" class="header-anchor">#</a> [admin] requestCommand</h4> <p>Returns a responseCommand message(with nonce) for managing node.</p> <p><strong>Parameter</strong></p> <p><code>Object</code> - Command object</p> <p><strong>Returns</strong></p> <p><code>String</code> - String of Command object</p> <p><strong>Example</strong></p> <div class="language- extra-class"><pre class="language-text"><code>// request
+{
+    &quot;id&quot;:&quot;142596201&quot;,
+    &quot;jsonrpc&quot;:&quot;2.0&quot;,
+    &quot;method&quot;:&quot;requestCommand&quot;,
+    &quot;params&quot;:{
+        &quot;command&quot;:{
+            &quot;header&quot;:&quot;{\&quot;timestamp\&quot;:\&quot;00000166818E7D38\&quot;,\&quot;nonce\&quot;:\&quot;28ef9ba1d6a55167aaabb165899f988a\&quot;,\&quot;bodyHash\&quot;:\&quot;3717ec34f5b0345c3b480d9cd402f0be1111c0e04cb9dbe1da5b933e353a5bba\&quot;,\&quot;bodyLength\&quot;:\&quot;0000000000000016\&quot;}&quot;,
+            &quot;signature&quot;:&quot;1b9cd47ba5847be5830a25cb94c407eaad0bbabaf0ad1a984dfb1ed04ccbb96e9f3a8b188568ba46415bb6895c166797417547b1029e3074dfd358a12f982a015a&quot;,
+            &quot;body&quot;:&quot;[{\&quot;method\&quot;:\&quot;setConfig\&quot;,\&quot;params\&quot;:\&quot;{network{port:32921},log{level:info}}\&quot;}]&quot;
+        }
+    }
+}
+
+or
+
+{
+    &quot;id&quot;:&quot;142596201&quot;,
+    &quot;jsonrpc&quot;:&quot;2.0&quot;,
+    &quot;method&quot;:&quot;requestCommand&quot;,
+    &quot;params&quot;:{
+        &quot;command&quot;:{
+            &quot;header&quot;:&quot;{\&quot;timestamp\&quot;:\&quot;00000166818E7D38\&quot;,\&quot;nonce\&quot;:\&quot;28ef9ba1d6a55167aaabb165899f988a\&quot;,\&quot;bodyHash\&quot;:\&quot;3717ec34f5b0345c3b480d9cd402f0be1111c0e04cb9dbe1da5b933e353a5bba\&quot;,\&quot;bodyLength\&quot;:\&quot;0000000000000016\&quot;}&quot;,
+            &quot;signature&quot;:&quot;1b9cd47ba5847be5830a25cb94c407eaad0bbabaf0ad1a984dfb1ed04ccbb96e9f3a8b188568ba46415bb6895c166797417547b1029e3074dfd358a12f982a015a&quot;,
+            &quot;body&quot;:&quot;[{\&quot;method\&quot;:\&quot;restart\&quot;}]&quot;
+        }
+    }
+}
+
+// result
+{
+    &quot;jsonrpc&quot;: &quot;2.0&quot;,
+    &quot;id&quot;: &quot;142596201&quot;,
+    &quot;result&quot;: &quot;{\&quot;header\&quot;:{\&quot;timestamp\&quot;:\&quot;000001669b8df580\&quot;,\&quot;nonce\&quot;:\&quot;aaabb165899f988aecd8754326149367\&quot;,\&quot;bodyHash\&quot;:\&quot;2344c5b38540509e0babd9292553d001fde5bc4a52e8af09221fc7dedc493ee7\&quot;,\&quot;bodyLength\&quot;:\&quot;000000000000001e\&quot;},\&quot;signature\&quot;:\&quot;1c36f6e720b32bd03d981388a0bc103ee5a4e4affee8481f175ab527ed4c189c045105aa4e99f78b64ed4e99f2d8a76fb430ebd88184e744378991a84f41b7650f\&quot;,\&quot;body\&quot;:[{\&quot;method\&quot;:\&quot;responseCommand\&quot;}]}&quot;
+}
+</code></pre></div><hr></div> <footer class="page-edit"><!----> <!----></footer> <div class="page-nav"><p class="inner"><span class="prev">
+        ←
+        <a href="/en/yggdrash-doc/node.html" class="prev">
+          Node
+        </a></span> <span class="next"><a href="/en/yggdrash-doc/api/api-interface.html">
+          Yggdrash API Interface
+        </a>
+        →
+      </span></p></div> </main></div><div class="global-ui"><!----></div></div>
+    <script src="/assets/js/2.7e4b7f88.js" defer></script><script src="/assets/js/11.34946d4e.js" defer></script><script src="/assets/js/app.23ef5bbf.js" defer></script>
+  </body>
+</html>
