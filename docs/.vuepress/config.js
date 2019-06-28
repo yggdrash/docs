@@ -23,6 +23,7 @@ module.exports = {
                 nav: [
                     { text: '홈', link: '/' },
                     { text: '가이드', link: '/ko/guide/' },
+                    { text: '문서', link: '/ko/yggdrash-doc/' },
                     { 
                         text: '제품',
                         items: [
@@ -39,6 +40,15 @@ module.exports = {
                         '/ko/guide/installation',
                         '/ko/guide/getting-started',
                         '/ko/guide/test-net'
+                    ],
+                    '/ko/yggdrash-doc/': [
+                        '/ko/yggdrash-doc/',
+                        '/ko/yggdrash-doc/architecture',
+                        '/ko/yggdrash-doc/block',
+                        '/ko/yggdrash-doc/node',
+                        '/ko/yggdrash-doc/api/jsonrpc-api',
+                        '/ko/yggdrash-doc/api/api-interface',
+                        '/ko/yggdrash-doc/api/jsonrpc-error-codes',
                     ]
                 }
             },
@@ -48,6 +58,7 @@ module.exports = {
                 nav: [
                     { text: 'Home', link: '/en/' },
                     { text: 'Guide', link: '/en/guide/' },
+                    { text: 'Document', link: '/en/yggdrash-doc/' },
                     { 
                         text: 'Products',
                         items: [
@@ -63,6 +74,15 @@ module.exports = {
                         '/en/guide/',
                         '/en/guide/installation',
                         '/en/guide/getting-started'
+                    ],
+                    '/en/yggdrash-doc/': [
+                        '/en/yggdrash-doc/',
+                        '/en/yggdrash-doc/architecture',
+                        '/en/yggdrash-doc/block',
+                        '/en/yggdrash-doc/node',
+                        '/en/yggdrash-doc/api/jsonrpc-api',
+                        '/en/yggdrash-doc/api/api-interface',
+                        '/en/yggdrash-doc/api/jsonrpc-error-codes',
                     ]
                 }
             }

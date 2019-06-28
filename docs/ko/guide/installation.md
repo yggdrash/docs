@@ -81,10 +81,13 @@ sudo curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.1/install.s
 nvm install 10.12.0
 ```
 ### Install yarn
+[Yarn installl](https://yarnpkg.com/lang/en/docs/install/)
+
 ```bash
 brew install yarn
 $ yarn -v
 ```
+
 ## 이그드라시 커맨더 설치
 이그드라시 커맨더는 이그드라시를 활용하고자 하는 개발자들이 손쉽게 개발할 수 있도록 도움을 주는 Command Line Interface 도구 입니다. 다음 단계인 시작하기에서는 커맨더를 사용하여 브랜치 체인 프로젝트를 스캐폴딩하고 빌드하고 배포하는 방법을 설명합니다.
 터미널에서 아래 명령어를 입력하여 이그드라시 커맨더를 설치합니다.
@@ -95,6 +98,7 @@ yarn global add @yggdrash/cli # or npm install -g @yggdrash/cli
 ```bash
 ygg --version
 ```
+
 ## 시작 지점 설정
 마지막으로 브랜치체인을 만들기 전에 당신의 프로젝트 폴더를 만들어서 그 곳에 위치합니다. 앞으로 우리는 메타코인이라는 Currency 브랜치체인을 만들 것입니다. 
 프로젝트 폴더 생성:
