@@ -49,7 +49,6 @@ module.exports = {
                         '/ko/yggdrash-doc/development-reference',
                         '/ko/yggdrash-doc/keystore.md',
                         '/ko/yggdrash-doc/api/jsonrpc-api',
-                        '/ko/yggdrash-doc/api/api-interface',
                         '/ko/yggdrash-doc/api/jsonrpc-error-codes',
                     ]
                 }
@@ -75,7 +74,8 @@ module.exports = {
                     '/en/guide/': [
                         '/en/guide/',
                         '/en/guide/installation',
-                        '/en/guide/getting-started'
+                        '/en/guide/getting-started',
+                        '/en/guide/test-net',
                     ],
                     '/en/yggdrash-doc/': [
                         '/en/yggdrash-doc/',
@@ -85,7 +85,6 @@ module.exports = {
                         '/ko/yggdrash-doc/development-reference',
                         '/ko/yggdrash-doc/keystore.md',
                         '/en/yggdrash-doc/api/jsonrpc-api',
-                        '/en/yggdrash-doc/api/api-interface',
                         '/en/yggdrash-doc/api/jsonrpc-error-codes',
                     ]
                 }
