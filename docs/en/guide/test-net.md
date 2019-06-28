@@ -70,6 +70,17 @@ Look in the EXPLORER for transaction information.
 - TEST NET
 [https://testnet.yggdrash.io/](https://testnet.yggdrash.io/)
 
+Transaction for CLI
+```bash
+> ygg tx get -i {Transaction hash}
+```
+
+Transaction Receipt for CLI
+```bash
+> ygg tx receipt -i {Transaction hash}
+```
+
+
 :::
 
 ## Node Sync Guide

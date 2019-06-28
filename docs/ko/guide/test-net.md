@@ -66,8 +66,18 @@ ygg query balanceOf
 
 ::: tip 트랜잭션 조회 
 트랜잭션의 정보를 Explorer 에서 조회해 보세요.
-
 [https://testnet.yggdrash.io/](https://testnet.yggdrash.io/)
+
+트랜잭션 조회
+```bash
+> ygg tx get -i {트랜잭션 hash}
+```
+
+트랜잭션 리십 조회
+```bash
+> ygg tx receipt -i {트랜잭션 hash}
+```
+
 
 :::
 
