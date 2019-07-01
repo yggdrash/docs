@@ -22,6 +22,6 @@
 > ex) $WORK_DIR$/.keystore/nodePri.key
 - 키파일은 IV(16Byte)와 암호화된키값(48Byte)으로 구성됩니다.
 
-![keystore](images/keystore.png)
+![keystore](/images/keystore.png)
 
-![key](images/KeyV003.png)
+![key](/images/KeyV003.png)
