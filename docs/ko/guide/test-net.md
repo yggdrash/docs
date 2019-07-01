@@ -20,23 +20,63 @@
 - 자세한내용은 [이그드라시 커맨더 설치](installation.md#이그드라시-커맨더-설치) 항목을 봐주세요.
 - cli 0.3.3 이상 버젼에서 해당 명령어가 적용 됩니다.
   
-### Faucet
+### 신규 계정 생성
+이드를 활용할 신규 계정을 생성 합니다.
+
+```bash
+ygg account new
+
+? Password: [hidden]
+  0798f7581C432Ce611c96bCA93Aa1734D183651F
+
+```
+
+### 노드 네트워크 연결
+```bash
+ygg node set -r http://localhost:8080
+
+
+remote Address is http://localhost:8080
+```
+
+### 노드 상태 확인
+```bash
+ygg node remoteStatus
+
+```
+
+```json
+{ address: 'http://localhost:8080',
+  branch:
+   { '3b898581ef0a6f172d31740c9de024101f1293a6':
+      { name: 'YGGDRASH',
+        symbol: 'YGGDRASH',
+        property: 'platform',
+        description: 'TRUST-based Multi-dimensional Blockchains',
+        contracts: [Array],
+        timestamp: '000001674dc56231',
+        consensus: [Object] } } }
+```
+
+### 이드 잔액 확인
+```bash
+ygg query balanceOf
+  ==> Balance : 0
+```
+
+### 테스트 이드 요청
 ::: tip NOTE
 YEED 컨트렉트에 faucet 트랜잭션을 발생시켜, 테스트 이드를 얻게 됩니다.
 
 상단의 CLI를 설치하고, 계정을 생성후 아래 명령어로 테스트 이드를 얻으세요. 
 :::
 
-```$xslt
-ygg invoke faucet
-```
-    
-
 >**아래 같이 패스워드를 입력 하면 이드요청 트랜잭션이 발송됩니다.**
-```$xslt
-? 691af5cbc92d8f4e5683246d27d199ccfa2548d6 password: [input is hidden]
-==> Transaction Hash : {트랜잭션 hash}
+```bash
+ygg invoke faucet
 
+? 4a2febcaca95d8bc4e1437e4507669fc73ce1e9f password: [hidden]
+ ==> Transaction Hash : 322ad25fdbfb4ae12cb051d82f3b1265baf4eeb774610ead5db3fb678366e067
 ```
 
 ::: warning NOTE
@@ -50,12 +90,12 @@ ygg invoke faucet
 ```bash
 ygg tx transfer -t {주소} -v {수량}
 
-ex) ygg tx transfer -t 31e46b23c147f1276df3f3ed82d08a81fb679422 -v 100
+ygg tx transfer -t 31e46b23c147f1276df3f3ed82d08a81fb679422 -v 100
 
 ---
 ygg ygg invoke transfer -p '{"to":"{주소}","amount":{수량}}'
 
-ex) ygg invoke transfer -p '{"to":"31e46b23c147f1276df3f3ed82d08a81fb679422","amount":100}'
+ygg invoke transfer -p '{"to":"31e46b23c147f1276df3f3ed82d08a81fb679422","amount":100}'
 ```
 
 ### YEED 조회

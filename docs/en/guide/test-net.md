@@ -19,24 +19,64 @@
 - [YGGDRASH CLI](https://github.com/yggdrash/yggdrash-cli)
 - For more information, see [Install YGGDRASH CLI](installation.md#Install-YGGDRASH-CLI).
 - YGGDRASH CLI In 0.3.3 or later version, the command is applied.
-  
-### Faucet
+
+### Create new Account (Wallet)
+Create a new account to take advantage of YEED.
+
+```bash
+ygg account new
+
+? Password: [hidden]
+  0798f7581C432Ce611c96bCA93Aa1734D183651F
+
+```
+
+### Node network connection
+```bash
+ygg node set -r http://localhost:8080
+
+
+remote Address is http://localhost:8080
+```
+
+### Check node status
+```bash
+ygg node remoteStatus
+
+```
+
+```json
+{ address: 'http://localhost:8080',
+  branch:
+   { '3b898581ef0a6f172d31740c9de024101f1293a6':
+      { name: 'YGGDRASH',
+        symbol: 'YGGDRASH',
+        property: 'platform',
+        description: 'TRUST-based Multi-dimensional Blockchains',
+        contracts: [Array],
+        timestamp: '000001674dc56231',
+        consensus: [Object] } } }
+```
+
+### Check YEED balance
+```bash
+ygg query balanceOf
+  ==> Balance : 0
+```
+
+### Request a Test YEED on YGGDRASH network
 ::: tip NOTE
 You will generate a faucet transaction on the YEED contract, and you will get a test YEED.
 
 Install the CLI at the top, create an account, and use the following command.
 :::
 
-```bash
-ygg invoke faucet
-```
-    
-
 >**If you enter the password as below, YEED request transaction will be sent.**
 ```bash
+ygg invoke faucet
+
 ? 691af5cbc92d8f4e5683246d27d199ccfa2548d6 password: [input is hidden]
 ==> Transaction Hash : {Transaction hash}
-
 ```
 
 ::: warning NOTE
@@ -50,12 +90,12 @@ If the address has an YEED, it will not be requested.
 ```bash
 ygg tx transfer -t {Address} -v {Amount}
 
-ex) ygg tx transfer -t 31e46b23c147f1276df3f3ed82d08a81fb679422 -v 100
+ygg tx transfer -t 31e46b23c147f1276df3f3ed82d08a81fb679422 -v 100
 
 ---
 ygg ygg invoke transfer -p '{"to":"{Address}","amount":{Amount}}'
 
-ex) ygg invoke transfer -p '{"to":"31e46b23c147f1276df3f3ed82d08a81fb679422","amount":100}'
+ygg invoke transfer -p '{"to":"31e46b23c147f1276df3f3ed82d08a81fb679422","amount":100}'
 ```
 
 ### Query YEED balance
