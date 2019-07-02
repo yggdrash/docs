@@ -1,6 +1,6 @@
 # Introduce
 
-TBD
+This site provides guidance on how to leverage YGGDRASH developer and block-chain network.
 
 ## Guide
 - Install Node and running

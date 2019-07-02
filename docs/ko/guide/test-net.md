@@ -128,6 +128,11 @@ ygg tx receipt -i {트랜잭션 hash}
 :::
 
 ## Node Sync Guide
+::: warning  WARNING JAVA SDK VERSION 
+USE JAVASDK 1.8 
+
+[설치 가이드](installation.md#install-java)
+:::
 [노드 실행 툴 다운로드](http://store.yggdrash.io/node/yggdrash-testnet-v0.5.1.tar)
 
 ```bash

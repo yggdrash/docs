@@ -124,6 +124,13 @@ ygg tx receipt -i {Transaction hash}
 :::
 
 ## Node Sync Guide
+::: warning  WARNING JAVA SDK VERSION 
+USE JAVASDK 1.8 
+
+[Install Guide](installation.md#install-java)
+:::
+
+
 [Download Node Tools](http://store.yggdrash.io/node/yggdrash-testnet-v0.5.1.tar)
 
 ```bash
