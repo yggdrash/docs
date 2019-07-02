@@ -138,7 +138,7 @@ USE JAVASDK 1.8
 ```bash
 mkdir testnet
 
-# curl -o http://store.yggdrash.io/node/yggdrash-testnet-v0.5.1.tar
+# curl -O http://store.yggdrash.io/node/yggdrash-testnet-v0.5.1.tar
 
 cd testnet
 
