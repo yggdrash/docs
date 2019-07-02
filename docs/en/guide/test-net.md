@@ -112,12 +112,12 @@ Look in the EXPLORER for transaction information.
 
 Transaction for CLI
 ```bash
-> ygg tx get -i {Transaction hash}
+ygg tx get -i {Transaction hash}
 ```
 
 Transaction Receipt for CLI
 ```bash
-> ygg tx receipt -i {Transaction hash}
+ygg tx receipt -i {Transaction hash}
 ```
 
 
