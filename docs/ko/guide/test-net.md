@@ -35,9 +35,15 @@ ygg account new
 ```bash
 ygg node set -r http://localhost:8080
 
-
 remote Address is http://localhost:8080
 ```
+
+::: tip TEST NODES
+NODE 싱크가 어려운 상황에서 YGGDRASH TEST NODE 를 활용 합니다.
+http://testnode.yggdrash.io
+
+:::
+
 
 ### 노드 상태 확인
 ```bash
@@ -122,5 +128,57 @@ ygg query balanceOf
 :::
 
 ## Node Sync Guide
-- [노드 동기화 방법](https://github.com/yggdrash/yggdrash#-yggdrash)
-- TBD
+[노드 실행 툴 다운로드](http://store.yggdrash.io/node/yggdrash-testnet-v0.5.1.tar)
+
+```bash
+mkdir testnet
+
+# curl -o http://store.yggdrash.io/node/yggdrash-testnet-v0.5.1.tar
+
+cd testnet
+
+tar xvf yggdrash-testnet-v0.5.1.tar
+
+cd bin
+./yggdrash init
+
+================================================================================
+You must set the environment YGGDRASH_HOME
+YGGDRASH_HOME is NOW ${pwd}
+YGGDRASH REPOSITORY INIT
+YGGDRASH FILE DOWNLOAD
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+100 66.2M  100 66.2M    0     0  12.0M      0  0:00:05  0:00:05 --:--:-- 13.2M
+================================================================================
+
+# all done
+```
+
+### NODE 실행
+```bash
+./yggdrash start
+```
+
+### NODE 중지
+```bash
+./yggdrash stop
+
+```
+
+### NODE 상태확인
+```bash
+./yggdrash status
+```
+
+
+### NODE log 확인
+```bash
+./yggdrash log
+```
+
+
+
+[DOWN LOAD TEST NET NODE 190702](http://store.yggdrash.io/node/v0.5.0-190702/yggdrash-node.jar)
+
+
