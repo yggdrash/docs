@@ -178,7 +178,6 @@ YGGDRASH FILE DOWNLOAD
 ```
 
 
-
 [DOWN LOAD TEST NET NODE 190702](http://store.yggdrash.io/node/v0.5.0-190702/yggdrash-node.jar)
 
 

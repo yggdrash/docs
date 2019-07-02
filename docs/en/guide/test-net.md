@@ -124,5 +124,51 @@ Transaction Receipt for CLI
 :::
 
 ## Node Sync Guide
-[DOWN LOAD TEST NET NODE 190702](http://store.yggdrash.io/node/v0.5.0-190702/yggdrash-node.jar)
+[Download Node Tools](http://store.yggdrash.io/node/yggdrash-testnet-v0.5.1.tar)
 
+```bash
+mkdir testnet
+
+# curl -o http://store.yggdrash.io/node/yggdrash-testnet-v0.5.1.tar
+
+cd testnet
+
+tar xvf yggdrash-testnet-v0.5.1.tar
+
+cd bin
+./yggdrash init
+
+================================================================================
+You must set the environment YGGDRASH_HOME
+YGGDRASH_HOME is NOW ${pwd}
+YGGDRASH REPOSITORY INIT
+YGGDRASH FILE DOWNLOAD
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+100 66.2M  100 66.2M    0     0  12.0M      0  0:00:05  0:00:05 --:--:-- 13.2M
+================================================================================
+
+# all done
+```
+
+### run YGGDRASH NODE
+```bash
+./yggdrash start
+```
+
+### Stop YGGDRASH NODE 
+```bash
+./yggdrash stop
+
+```
+
+### Check YGGDRASH NODE Status
+```bash
+./yggdrash status
+```
+
+
+### Tracking YGGDRASH NODE logs
+```bash
+./yggdrash log
+```
