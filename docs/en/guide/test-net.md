@@ -52,7 +52,7 @@ ygg node remoteStatus
       { name: 'YGGDRASH',
         symbol: 'YGGDRASH',
         property: 'platform',
-        description: 'TRUST-based Multi-dimensional Blockchains',
+        description: 'TRUST-based Multi-dimensional Blockchain',
         contracts: [Array],
         timestamp: '000001674dc56231',
         consensus: [Object] } } }
