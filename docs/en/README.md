@@ -26,6 +26,4 @@ ygg branch deploy
 ```
 
 Running Node:
-```bash
-docker run --rm -p 8080:8080 -v $HOME/.yggdrash:/.yggdrash yggdrash/yggdrash-node
-```
+- https://developers.yggdrash.io/en/guide/test-net.html#node-sync-guide
