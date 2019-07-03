@@ -21,6 +21,3 @@ ygg branch build
     $ ygg branch deploy
 ```    
 
-## Running Node
-
-    $ docker run --rm -p 8080:8080 -v $HOME/.yggdrash:/.yggdrash yggdrash/yggdrash-node
