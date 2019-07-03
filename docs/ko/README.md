@@ -25,4 +25,5 @@ ygg branch build
 ygg branch deploy
 ```
 
-[YGGDRASH TEST Network Guide kr](guide/test-net)
+Running Node:
+- https://developers.yggdrash.io/ko/guide/test-net.html#node-sync-guide

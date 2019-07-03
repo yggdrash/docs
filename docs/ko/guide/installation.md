@@ -33,32 +33,7 @@ sdk install java 8.0.192-zulu
 javac -version
 javac 1.8.0_192
 ```
-## 도커 설치
-우리는 이그드라시 플랫폼 위에서 비즈니스를 하려는 사용자 혹은 개발자가 개발 환경 설정보다는 비즈니스 개발에 집중하길 원합니다. 따라서 노드가 동작하기 위한 모든 환경이 갖춰진 도커 컨테이너 이미지를 제공합니다. 우리는 프로젝트가 릴리즈 될 때마다 이미지를 도커 허브에 배포합니다.
-직접 소스를 가지고 제어하기를 원한다면, 깃허브 레포지토리에 소스와 가이드가 있으니 참고하세요. (추천하지 않습니다.)
-### Install Docker (OS X)
-Mac OS X 버전을 다운로드 받아 설치 합니다. [https://download.docker.com/mac/stable/Docker.dmg](https://download.docker.com/mac/stable/Docker.dmg)
-다른 OS에서 도커를 설치하려면 다음 사이트를 방문하세요. [https://docs.docker.com/install](https://docs.docker.com/install)
-```bash
-docker version
-Client: Docker Engine - Community
- Version:           18.09.0
- API version:       1.39
- Go version:        go1.10.4
- Git commit:        4d60db4
- Built:             Wed Nov  7 00:47:43 2018
- OS/Arch:           darwin/amd64
- Experimental:      false
-Server: Docker Engine - Community
- Engine:
-  Version:          18.09.0
-  API version:      1.39 (minimum version 1.12)
-  Go version:       go1.10.4
-  Git commit:       4d60db4
-  Built:            Wed Nov  7 00:55:00 2018
-  OS/Arch:          linux/amd64
-  Experimental:     true
-```
+
 ## 노드JS 설치
 커맨더는 자바스크립트로 개발되었으며, Node 에 의존성을 가지고 있습니다. 
 커맨더를 설치하고 동작하기 위한 환경은 다음과 같습니다.

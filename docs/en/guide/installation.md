@@ -36,32 +36,7 @@ sdk install java 8.0.192-zulu
 javac -version
 javac 1.8.0_192
 ```
-## Install Docker
-We want users or developers who want to do business on the Igradish platform to focus on business development rather than setting up a development environment. It provides a container image of the docker with all the environments for the node to operate. We deploy images to the Hacker hub every time a project is released.
-If you want to control it with your own source, there is a source and a guide in the feather hub repository. (Not recommended.)
-### Install Docker (OS X)
-Download and install the Mac OS X version.  [https://download.docker.com/mac/stable/Docker.dmg](https://download.docker.com/mac/stable/Docker.dmg)
-To install the docker on another OS, please visit:  [https://docs.docker.com/install](https://docs.docker.com/install)
-```bash
-docker version
-Client: Docker Engine - Community
- Version:           18.09.0
- API version:       1.39
- Go version:        go1.10.4
- Git commit:        4d60db4
- Built:             Wed Nov  7 00:47:43 2018
- OS/Arch:           darwin/amd64
- Experimental:      false
-Server: Docker Engine - Community
- Engine:
-  Version:          18.09.0
-  API version:      1.39 (minimum version 1.12)
-  Go version:       go1.10.4
-  Git commit:       4d60db4
-  Built:            Wed Nov  7 00:55:00 2018
-  OS/Arch:          linux/amd64
-  Experimental:     true
-```
+
 ## Install NodeJS
 CLI is developed in JavaScript and has a dependency on Node.
 The environment for installing and operating CLI is as follows.

@@ -6,12 +6,12 @@ module.exports = {
         '/': {
             lang: 'ko',
             title: 'YGGDRASH DEVELOPERS',
-            description: 'TRUST-based Multi-dimensional Blockchains'
+            description: 'TRUST-based Multi-dimensional Blockchain'
         },
         '/en/': {
             lang: 'en-US',
             title: 'YGGDRASH',
-            description: 'TRUST-based Multi-dimensional Blockchains'
+            description: 'TRUST-based Multi-dimensional Blockchain'
         }
     },
     themeConfig: {
