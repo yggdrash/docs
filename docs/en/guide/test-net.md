@@ -39,6 +39,15 @@ ygg node set -r http://localhost:8080
 remote Address is http://localhost:8080
 ```
 
+::: tip USE YGGDRASH TEST NODES
+If you have difficult to sync node, use yggdrash test node
+
+```bash
+ygg node set -r http://testnode.yggdrash.io
+```
+:::
+
+
 ### Check node status
 ```bash
 ygg node remoteStatus

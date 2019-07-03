@@ -26,4 +26,4 @@ ygg branch deploy
 ```
 
 
-[YGGDRASH TEST Network Guide kr](kr/guide/test-net)
+[테스트넷 가이드 한국어 버젼](ko/guide/test-net)

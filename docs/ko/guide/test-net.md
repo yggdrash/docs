@@ -40,7 +40,11 @@ remote Address is http://localhost:8080
 
 ::: tip TEST NODES
 NODE 싱크가 어려운 상황에서 YGGDRASH TEST NODE 를 활용 합니다.
-http://testnode.yggdrash.io
+
+```bash
+ygg node set -r http://testnode.yggdrash.io
+```
+
 
 :::
 
