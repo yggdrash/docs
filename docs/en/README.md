@@ -25,7 +25,4 @@ ygg branch build
 ygg branch deploy
 ```
 
-Running Node:
-```bash
-docker run --rm -p 8080:8080 -v $HOME/.yggdrash:/.yggdrash yggdrash/yggdrash-node
-```
+[YGGDRASH TEST Network Guide](guide/test-net)
