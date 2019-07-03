@@ -49,7 +49,6 @@ ygg node set -r http://testnode.yggdrash.io
 
 
 ### Check Node Status
->>>>>>> b545b2fbced014f094eeb8c7c0e52f966693f2ed
 ```bash
 ygg node remoteStatus
 
