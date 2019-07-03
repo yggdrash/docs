@@ -11,7 +11,7 @@
 ### YGGDRASH WEB Wallet (준비중)
 - TBD
 
-### Yggdrash Javascript Sdk
+### YGGDRASH Javascript SDK
 - [javascript sdk](https://github.com/yggdrash/yggdrash-sdk-js)
 
 

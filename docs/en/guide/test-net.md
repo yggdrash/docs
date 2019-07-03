@@ -11,7 +11,7 @@
 ### YGGDRASH WEB Wallet
 - TBD
 
-### Yggdrash Javascript Sdk
+### YGGDRASH Javascript SDK
 - [javascript sdk](https://github.com/yggdrash/yggdrash-sdk-js)
 
 
@@ -20,7 +20,7 @@
 - For more information, see [Install YGGDRASH CLI](installation.md#Install-YGGDRASH-CLI).
 - YGGDRASH CLI In 0.3.3 or later version, the command is applied.
 
-### Create new Account (Wallet)
+### Create New Account (Wallet)
 Create a new account to take advantage of YEED.
 
 ```bash
@@ -31,7 +31,7 @@ ygg account new
 
 ```
 
-### Node network connection
+### Node Network Connection
 ```bash
 ygg node set -r http://localhost:8080
 
@@ -39,7 +39,7 @@ ygg node set -r http://localhost:8080
 remote Address is http://localhost:8080
 ```
 
-### Check node status
+### Check Node Status
 ```bash
 ygg node remoteStatus
 
@@ -58,13 +58,13 @@ ygg node remoteStatus
         consensus: [Object] } } }
 ```
 
-### Check YEED balance
+### Check YEED Balance
 ```bash
 ygg query balanceOf
   ==> Balance : 0
 ```
 
-### Request a Test YEED on YGGDRASH network
+### Request a Test YEED on YGGDRASH Network
 ::: tip NOTE
 You will generate a faucet transaction on the YEED contract, and you will get a test YEED.
 
@@ -98,7 +98,7 @@ ygg ygg invoke transfer -p '{"to":"{Address}","amount":{Amount}}'
 ygg invoke transfer -p '{"to":"31e46b23c147f1276df3f3ed82d08a81fb679422","amount":100}'
 ```
 
-### Query YEED balance
+### Query YEED Balance
 ```bash
 ygg query balanceOf
   ==> Balance : 1000
