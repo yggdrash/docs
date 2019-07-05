@@ -131,6 +131,8 @@ ygg tx receipt -i {트랜잭션 hash}
 
 :::
 
+<iframe width="600" height="400" src="https://www.youtube.com/embed/NAll2fPU6zw" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+
 ## Node Sync Guide
 ::: warning  WARNING JAVA SDK VERSION 
 USE JAVASDK 1.8 
