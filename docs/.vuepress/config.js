@@ -23,7 +23,7 @@ module.exports = {
                 nav: [
                     { text: '홈', link: '/' },
                     { text: '가이드', link: '/ko/guide/' },
-                    { text: '문서', link: '/ko/yggdrash-doc/' },
+                    { text: '문서', link: 'https://www.notion.so/r2v/DEVELOPMENT-92bc58cc635e4cb98ca05bce04ae0933' },
                     { 
                         text: '제품',
                         items: [
@@ -59,7 +59,7 @@ module.exports = {
                 nav: [
                     { text: 'Home', link: '/en/' },
                     { text: 'Guide', link: '/en/guide/' },
-                    { text: 'Document', link: '/en/yggdrash-doc/' },
+                    { text: 'Document', link: 'https://www.notion.so/r2v/DEVELOPMENT-92bc58cc635e4cb98ca05bce04ae0933' },
                     { 
                         text: 'Products',
                         items: [
