@@ -134,60 +134,45 @@ ygg tx receipt -i {트랜잭션 hash}
 <iframe width="600" height="400" src="https://www.youtube.com/embed/NAll2fPU6zw" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 
 ## Node Sync Guide
-::: warning  WARNING JAVA SDK VERSION 
-USE JAVASDK 1.8 
-
 [설치 가이드](installation.md#install-java)
-:::
-[노드 실행 툴 다운로드](http://store.yggdrash.io/node/yggdrash-testnet-v0.5.1.tar)
 
+[노드 실행 툴 다운로드](http://store.yggdrash.io/node/akashic-yggdrash-0.8.0.tar.gz)
+
+### NODE 설치 & 실행
 ```bash
 mkdir testnet
 
-# curl -O http://store.yggdrash.io/node/yggdrash-testnet-v0.5.1.tar
+# curl -O http://store.yggdrash.io/node/akashic-yggdrash-0.8.0.tar.gz
 
 cd testnet
 
-tar xvf yggdrash-testnet-v0.5.1.tar
+tar xvfz akashic-yggdrash-0.8.0.tar.gz
 
-cd bin
-./yggdrash init
+cd akashic-yggdrash-0.8.0/bin
 
-================================================================================
-You must set the environment YGGDRASH_HOME
-YGGDRASH_HOME is NOW ${pwd}
-YGGDRASH REPOSITORY INIT
-YGGDRASH FILE DOWNLOAD
-  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
-                                 Dload  Upload   Total   Spent    Left  Speed
-100 66.2M  100 66.2M    0     0  12.0M      0  0:00:05  0:00:05 --:--:-- 13.2M
-================================================================================
-
-# all done
-```
-
-### NODE 실행
-```bash
 ./yggdrash start
 ```
+
+
+### NODE 상태 확인
+```bash
+./yggdrash status
+```
+
+
+### NODE 로그 확인
+```bash
+./yggdrash log
+
+^C
+```
+
 
 ### NODE 중지
 ```bash
 ./yggdrash stop
 
 ```
-
-### NODE 상태확인
-```bash
-./yggdrash status
-```
-
-
-### NODE log 확인
-```bash
-./yggdrash log
-```
-
 
 [DOWN LOAD TEST NET NODE 190702](http://store.yggdrash.io/node/v0.5.0-190702/yggdrash-node.jar)
 

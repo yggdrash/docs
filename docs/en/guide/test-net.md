@@ -136,58 +136,41 @@ ygg tx receipt -i {Transaction hash}
 
 
 ## Node Sync Guide
-::: warning  WARNING JAVA SDK VERSION 
-USE JAVASDK 1.8 
 
 [Install Guide](installation.md#install-java)
-:::
 
 
-[Download Node Tools](http://store.yggdrash.io/node/yggdrash-testnet-v0.5.1.tar)
+[Download Node Tools](http://store.yggdrash.io/node/akashic-yggdrash-0.8.0.tar.gz)
 
+### Install & Run the node
 ```bash
 mkdir testnet
 
-# curl -O http://store.yggdrash.io/node/yggdrash-testnet-v0.5.1.tar
+# curl -O http://store.yggdrash.io/node/akashic-yggdrash-0.8.0.tar.gz
 
 cd testnet
 
-tar xvf yggdrash-testnet-v0.5.1.tar
+tar xvfz akashic-yggdrash-0.8.0.tar.gz
 
-cd bin
-./yggdrash init
+cd akashic-yggdrash-0.8.0/bin
 
-================================================================================
-You must set the environment YGGDRASH_HOME
-YGGDRASH_HOME is NOW ${pwd}
-YGGDRASH REPOSITORY INIT
-YGGDRASH FILE DOWNLOAD
-  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
-                                 Dload  Upload   Total   Spent    Left  Speed
-100 66.2M  100 66.2M    0     0  12.0M      0  0:00:05  0:00:05 --:--:-- 13.2M
-================================================================================
-
-# all done
-```
-
-### run YGGDRASH NODE
-```bash
 ./yggdrash start
 ```
 
-### Stop YGGDRASH NODE 
-```bash
-./yggdrash stop
-
-```
-
-### Check YGGDRASH NODE Status
+### Check node status
 ```bash
 ./yggdrash status
 ```
 
 
-### Tracking YGGDRASH NODE logs
+### View node logs
 ```bash
 ./yggdrash log
+
+^C
+```
+
+### Stop the node
+```bash
+./yggdrash stop
 ```
