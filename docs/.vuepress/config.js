@@ -73,7 +73,6 @@ module.exports = {
                     '/en/guide/': [
                         '/en/guide/',
                         '/en/guide/installation',
-                        '/en/guide/getting-started',
                         '/en/guide/test-net',
                     ],
                     '/en/yggdrash-doc/': [
