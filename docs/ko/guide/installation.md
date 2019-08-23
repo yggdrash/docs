@@ -73,20 +73,3 @@ yarn global add @yggdrash/cli # or npm install -g @yggdrash/cli
 ```bash
 ygg --version
 ```
-
-## 시작 지점 설정
-마지막으로 브랜치체인을 만들기 전에 당신의 프로젝트 폴더를 만들어서 그 곳에 위치합니다. 앞으로 우리는 메타코인이라는 Currency 브랜치체인을 만들 것입니다. 
-프로젝트 폴더 생성:
-```bash
-mkdir metacoin
-cd metacoin
-```
-조금 더 나아가서 커맨더를 사용해서 계정을 생성해봅시다.
-이그드라시 계정 생성:
-```bash
-ygg account new
-```
-<p align="center">
-<img src="https://media.giphy.com/media/PMipLUnbPAGOcqyWhs/giphy.gif" width="80%"/>
-</p>
-
