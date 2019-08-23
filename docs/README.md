@@ -18,12 +18,5 @@ Install YGGDRASH Commander:
 yarn global add @yggdrash/cli # or npm install -g @yggdrash/cli
 ```
 
-Build Your BranchChain:
-```bash
-ygg branch init
-ygg branch build
-ygg branch deploy
-```
-
 
 [테스트넷 가이드 한국어 버젼](ko/guide/test-net)
