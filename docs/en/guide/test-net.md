@@ -54,7 +54,7 @@ ygg node remoteStatus
 
 ```
 
-```json
+``` JSON
 { address: 'http://localhost:8080',
   branch:
    { '3b898581ef0a6f172d31740c9de024101f1293a6':
@@ -136,15 +136,13 @@ ygg tx receipt -i {Transaction hash}
 
 
 ## Node Sync Guide
-::: warning  WARNING JAVA SDK VERSION 
-USE JAVASDK 1.8 
 
 [Install Guide](installation.md#install-java)
-:::
 
 
 [Download Node Tools](http://store.yggdrash.io/node/akashic-yggdrash-0.8.0.tar.gz)
 
+### Install Node
 ```bash
 
 curl -O http://store.yggdrash.io/node/akashic-yggdrash-0.8.0.tar.gz
@@ -155,17 +153,6 @@ cd akashic-yggdrash-0.8.0/bin
 
 ./yggdrash init
 
-================================================================================
-You must set the environment YGGDRASH_HOME
-YGGDRASH_HOME is NOW ${pwd}
-YGGDRASH REPOSITORY INIT
-YGGDRASH FILE DOWNLOAD
-  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
-                                 Dload  Upload   Total   Spent    Left  Speed
-100 66.2M  100 66.2M    0     0  12.0M      0  0:00:05  0:00:05 --:--:-- 13.2M
-================================================================================
-
-# all done
 ```
 
 ### run YGGDRASH NODE
@@ -173,19 +160,20 @@ YGGDRASH FILE DOWNLOAD
 ./yggdrash start
 ```
 
-### Stop YGGDRASH NODE 
-```bash
-./yggdrash stop
-
-```
-
-### Check YGGDRASH NODE Status
+### Check node status
 ```bash
 ./yggdrash status
 ```
 
 
-### Tracking YGGDRASH NODE logs
+### View node logs
 ```bash
 ./yggdrash log
+
+^C
+```
+
+### Stop the node
+```bash
+./yggdrash stop
 ```

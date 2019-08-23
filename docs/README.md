@@ -2,7 +2,7 @@
 home: true
 heroImage: /favicon.png
 actionText: Get Started →
-actionLink: /ko/guide/getting-started
+actionLink: /ko/guide/installation
 features:
 - title: Extendability
   details: We can extend unlimited chains with branch chains.
@@ -16,13 +16,6 @@ footer: MIT Licensed | Copyright © 2017-present AKASHIC
 Install YGGDRASH Commander:
 ```bash
 yarn global add @yggdrash/cli # or npm install -g @yggdrash/cli
-```
-
-Build Your BranchChain:
-```bash
-ygg branch init
-ygg branch build
-ygg branch deploy
 ```
 
 
