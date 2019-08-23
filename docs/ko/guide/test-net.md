@@ -140,19 +140,15 @@ ygg tx receipt -i {트랜잭션 hash}
 
 ### NODE 설치 & 실행
 ```bash
-mkdir testnet
 
-# curl -O http://store.yggdrash.io/node/akashic-yggdrash-0.8.0.tar.gz
+curl -O http://store.yggdrash.io/node/akashic-yggdrash-0.8.0.tar.gz
 
-cd testnet
-
-tar xvfz akashic-yggdrash-0.8.0.tar.gz
+tar xvf akashic-yggdrash-0.8.0.tar.gz
 
 cd akashic-yggdrash-0.8.0/bin
 
 ./yggdrash start
 ```
-
 
 ### NODE 상태 확인
 ```bash

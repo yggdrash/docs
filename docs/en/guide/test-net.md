@@ -142,7 +142,7 @@ ygg tx receipt -i {Transaction hash}
 
 [Download Node Tools](http://store.yggdrash.io/node/akashic-yggdrash-0.8.0.tar.gz)
 
-### Install Node
+### Install & Run Node
 ```bash
 
 curl -O http://store.yggdrash.io/node/akashic-yggdrash-0.8.0.tar.gz
@@ -151,14 +151,9 @@ tar xvf akashic-yggdrash-0.8.0.tar.gz
 
 cd akashic-yggdrash-0.8.0/bin
 
-./yggdrash init
-
-```
-
-### run YGGDRASH NODE
-```bash
 ./yggdrash start
 ```
+
 
 ### Check node status
 ```bash
