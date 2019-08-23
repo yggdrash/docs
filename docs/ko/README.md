@@ -2,6 +2,7 @@
 home: true
 heroImage: /favicon.png
 actionText: Get Started →
+actionLink: /ko/guide/installation
 features:
 - title: Extendability
   details: We can extend unlimited chains with branch chains.

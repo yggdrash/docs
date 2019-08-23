@@ -38,7 +38,6 @@ module.exports = {
                     '/ko/guide/': [
                         '/ko/guide/',
                         '/ko/guide/installation',
-                        '/ko/guide/getting-started',
                         '/ko/guide/test-net'
                     ],
                     '/ko/yggdrash-doc/': [
@@ -74,7 +73,6 @@ module.exports = {
                     '/en/guide/': [
                         '/en/guide/',
                         '/en/guide/installation',
-                        '/en/guide/getting-started',
                         '/en/guide/test-net',
                     ],
                     '/en/yggdrash-doc/': [

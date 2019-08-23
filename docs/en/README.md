@@ -2,7 +2,7 @@
 home: true
 heroImage: /favicon.png
 actionText: Get Started →
-actionLink: /en/guide/getting-started
+actionLink: /en/guide/installation
 features:
 - title: Extendability
   details: We can extend unlimited chains with branch chains.
