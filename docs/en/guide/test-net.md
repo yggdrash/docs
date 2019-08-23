@@ -143,18 +143,16 @@ USE JAVASDK 1.8
 :::
 
 
-[Download Node Tools](http://store.yggdrash.io/node/yggdrash-testnet-v0.5.1.tar)
+[Download Node Tools](http://store.yggdrash.io/node/akashic-yggdrash-0.8.0.tar.gz)
 
 ```bash
-mkdir testnet
 
-# curl -O http://store.yggdrash.io/node/yggdrash-testnet-v0.5.1.tar
+curl -O http://store.yggdrash.io/node/akashic-yggdrash-0.8.0.tar.gz
 
-cd testnet
+tar xvf akashic-yggdrash-0.8.0.tar.gz
 
-tar xvf yggdrash-testnet-v0.5.1.tar
+cd akashic-yggdrash-0.8.0/bin
 
-cd bin
 ./yggdrash init
 
 ================================================================================
